@@ -1,0 +1,43 @@
+{
+  "name": "starter-theme",
+  "version": "1.0.0",
+  "description": "Stater Theme for init integration's projects by Louis Cauvet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Louis-Cauvet/Starter-Theme.git"
+  },
+  "keywords": [
+    "Starter",
+    "Theme",
+    "Gulp",
+    "Twig",
+    "integration"
+  ],
+  "author": "Louis Cauvet",
+  "license": "ISC",
+  "path": {
+    "src": "marmite-src",
+    "dist": "marmite-dist",
+    "vendors": "node_modules"
+  },
+  "bugs": {
+    "url": "https://github.com/Louis-Cauvet/Starter-Theme/issues"
+  },
+  "homepage": "https://github.com/Louis-Cauvet/Starter-Theme#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-twig": "^1.2.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.77.8"
+  }
+}

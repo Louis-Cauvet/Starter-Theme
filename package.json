@@ -31,7 +31,9 @@
   "devDependencies": {
     "del": "^5.1.0",
     "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-livereload": "^4.0.2",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
@@ -39,5 +41,10 @@
     "gulp-twig": "^1.2.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.77.8"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie >= 11"
+  ]
 }

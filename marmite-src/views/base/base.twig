@@ -1,5 +1,6 @@
 {% set root = '../' %}
 {% import "../macros/macros.twig" as macros %}
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -17,7 +18,7 @@
     {# CSS STYLES #}
     {%- block stylesheet %}
         <link rel="stylesheet" href="{{ root }}assets/css/styles.min.css">
-        <link rel="stylesheet" href="{{ root }}assets/css/print.css"  media="print">
+        <link rel="stylesheet" href="{{ root }}assets/css/styles.min.css" media="print">
     {% endblock -%}
 
     {# FAVICONS #}
@@ -48,8 +49,9 @@
     {% endblock %}
 {% endblock body %}
 
+{# JS SCRIPTS #}
 {% block bottomScript %}
-    {%- include "../components/scripts-bottom.twig" -%}
+    <script defer src="{{ root }}assets/js/scripts-front.min.js"></script>
 {% endblock bottomScript %}
 </body>
 </html>

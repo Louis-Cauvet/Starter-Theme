@@ -1,4 +1,9 @@
 'use strict';
 
+import $ from 'jquery';
 
-console.log("coucou");
+$(document).ready(function() {
+    console.log('jQuery is ready!');
+});
+
+$('body').append('<p>Saluuut !!!</p>');

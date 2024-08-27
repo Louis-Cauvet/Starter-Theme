@@ -10,8 +10,8 @@ nbproject
 # Node
 node_modules
 
-# Logs
-*.log
-
 # Composer
 /vendor
+
+# Logs
+*.log

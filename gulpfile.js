@@ -185,7 +185,7 @@ gulp.task('images:clean', function () {
 
 // Optimizing task from images into 'marmite-src' to minified images into 'marmite-dist'
 gulp.task('images:optimize',  function () {
-    return gulp.src(pkg.path.src + '/assets/img/**/*.{svg,gif,jpg,png}')               // Getting all images SVG, JPEG, PNG or GIF
+    return gulp.src(pkg.path.src + '/assets/img/**/*.{svg,gif,jpg,png}', { encoding : false })               // Getting all images SVG, JPEG, PNG or GIF
     .pipe(imagemin([
         imagemin.gifsicle({interlaced: true}),             // Optimizing GIF images
         imagemin.mozjpeg({progressive: true}),             // Optimizing JPEG images
@@ -206,8 +206,8 @@ gulp.task('images:optimize',  function () {
 });
 
 gulp.task('images:simple-copy', function() {
-    return gulp.src('marmite-src/assets/img/**/*.{svg,gif,jpg,png}')
-        .pipe(gulp.dest('marmite-dist/assets/img/'));
+    return gulp.src('marmite-src/assets/img/**', { encoding : false })
+    .pipe(gulp.dest('marmite-dist/assets/img'));
 });
 
 

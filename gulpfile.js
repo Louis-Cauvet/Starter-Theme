@@ -18,6 +18,11 @@ const gulp = require('gulp'),
 
     // JS EXTENSIONS
     uglify = require('gulp-uglify'),
+    eslint = require('gulp-eslint'),
+
+    // IMAGES EXTENSIONS,
+    imagemin = require('gulp-imagemin'),
+    svgSprite = require('gulp-svg-sprite'),
 
     // ES6 LINKED EXTENSIONS
     babelify = require('babelify'),
@@ -115,6 +120,29 @@ gulp.task('js:clean', function () {
     return del(pkg.path.dist + '/assets/js/*.js' );            // Deletting all JS files contained in "marmite-dist"
 });
 
+// Checking task to verify if the JS code is correctly written
+gulp.task('js:check', function () {
+    return gulp.src([
+        pkg.path.src + '/assets/js/script-front.js'                       // Getting JS files
+    ])
+    .pipe(eslint())                                                       // Analysing the JS syntax
+    .pipe(eslint.format())                                                // Displaying syntax error messages in console
+    .pipe(notify(function (file) {
+        if (!file.eslint) {
+            return false;
+        }
+        const errors = file.eslint.messages.map(function (data) {
+            if (data.error) {
+                return '(' + data.line + ':' + data.column + ') ' + data.message;            // Writting syntax error messages finded by eslint
+            }
+        }).join('\n');
+        if (file.eslint.errorCount > 0 || file.eslint.warningCount > 0) {
+            return file.relative + ' (' + file.eslint.errorCount + ' errors, ' + file.eslint.warningCount + ' warnings)\n' + errors;
+        }
+        return false;
+    }))
+});
+
 // Converting task from 'script-front.js' into 'marmite-src' to 'script-front.min.js' into 'marmite-dist'
 gulp.task('js:build', async function () {
     const stripDebug = await loadStripDebug();
@@ -142,13 +170,101 @@ gulp.task('js:build', async function () {
     // .pipe(stripDebug())                                        // Deleting debug declarations in code (console, alert, debugger)   --> ACTIVATE FOR DEPLOY IN PROD
     .pipe(uglify())                                               // Minifying JS file
     .pipe(rename({extname: '.min.js'}))                       // Modifying files' extension to indicate than it's minified
-    .pipe(gulp.dest(pkg.path.dist + '/assets/js/'))                // Transferring minified JS file to destination folder
+    .pipe(gulp.dest(pkg.path.dist + '/assets/js/'))               // Transferring minified JS file to destination folder
     .pipe(livereload());                                          // Triggering livereload for reload automatically the browser
 });
+
+
+/*******************************
+ ** MINIFY IMAGES
+ ******************************/
+// Cleaning task for images into 'marmite-dist'
+gulp.task('images:clean', function () {
+    return del(pkg.path.dist + '/assets/img/**/*' );            // Deletting all images contained in "marmite-dist"
+});
+
+// Optimizing task from images into 'marmite-src' to minified images into 'marmite-dist'
+gulp.task('images:optimize',  function () {
+    return gulp.src(pkg.path.src + '/assets/img/**/*.{svg,gif,jpg,png}')               // Getting all images SVG, JPEG, PNG or GIF
+    .pipe(imagemin([
+        imagemin.gifsicle({interlaced: true}),             // Optimizing GIF images
+        imagemin.mozjpeg({progressive: true}),             // Optimizing JPEG images
+        imagemin.optipng({optimizationLevel: 5}),          // Optimizing PNG images
+        imagemin.svgo({                                    // Optimizing SVG images
+            plugins: [{ removeViewBox: false }]
+        })
+    ]))
+    .on('error', function (err) {                              // Sending error messages when catching it
+        notify({
+            title: 'Gulp Build TWIG',
+            message: 'Check the Task Runner or console for more details.'
+        }).write(err);
+        console.error(err);
+        this.emit('end');
+    })
+    .pipe(gulp.dest(pkg.path.dist + '/assets/img/'));                // Transferring minified images to destination folder
+});
+
+gulp.task('images:simple-copy', function() {
+    return gulp.src('marmite-src/assets/img/**/*.{svg,gif,jpg,png}')
+        .pipe(gulp.dest('marmite-dist/assets/img/'));
+});
+
+
+const svgSpriteconfig = {                     // Defining the svg properties for the sprite
+    shape : {
+        dimension : {                              // Setting maximum dimensions (in pixels)
+            maxWidth : 32,
+            maxHeight : 32
+        },
+    },
+    mode : {
+        symbol : {                                 // Activating the "symbol" mode
+            render : {
+                css : false,                       // Deactivating of CSS file generation for icon size
+                scss : false                       // Deactivating of SCSS file generation for icon size
+            },
+            dest : '.',                            // Defining the sprite path in destination folder
+            sprite : 'icon-sprite.svg',            // Defining the sprite name
+            example : true                         // Building an example page
+        }
+    },
+    svg : {
+        doctypeDeclaration : false,               // Deactivating a doctype declaration in the sprite
+        dimensionAttributes : false               // Deactivating dimension attributes in the sprite
+    }
+};
+// Building task for svg sprite
+gulp.task('images:build-svg-sprite', function() {
+    return gulp.src(pkg.path.src + '/assets/img/svg/*')         // Getting all svg images
+    .pipe(plumber())                                            // Getting errors if they are meet
+    .pipe(svgSprite(svgSpriteconfig))                           // Building the svg sprite with parameters define up
+    .pipe(gulp.dest(pkg.path.dist + '/assets/img/svg/'))
+    // .pipe(livereload());                                     // Triggering livereload for reload automatically the browser
+});
+
+
+/*******************************
+ ** FONTS
+ ******************************/
+// Cleaning task for fonts into 'marmite-dist'
+gulp.task('fonts:clean', function () {
+    return del(pkg.path.dist + '/assets/fonts/**/*' );            // Deletting all fonts contained in "marmite-dist"
+});
+
+// Converting task from fonts into 'marmite-src' to fonts into 'marmite-dist'
+gulp.task('fonts:build', function () {
+    return gulp.src(pkg.path.src + '/assets/fonts/**/*')                   // Getting all fonts
+    .pipe(gulp.dest(pkg.path.dist + '/assets/fonts'));                     // Transferring fonts to destination folder
+});
+
+
 
 /*******************************
  * DEFAULT TASKS
  ******************************/
-gulp.task('html', gulp.series('html:clean', 'html:build'));                // "gulp html"
-gulp.task('css', gulp.series('css:clean', 'css:build'));                   // "gulp css"
-gulp.task('js', gulp.series('js:clean', 'js:build'));                   // "gulp css"
+gulp.task('html', gulp.series('html:clean', 'html:build'));                  // "gulp html"
+gulp.task('css', gulp.series('css:clean', 'css:build'));                     // "gulp css"
+gulp.task('js', gulp.series('js:clean', 'js:check', 'js:build'));            // "gulp css"
+gulp.task('images', gulp.series('images:clean','images:optimize', 'images:build-svg-sprite'));      // "gulp images"
+gulp.task('fonts', gulp.series('fonts:clean','fonts:build'));                // "gulp fonts"

@@ -266,7 +266,7 @@ gulp.task('fonts:build', function () {
 // Task which opened a new local web server based on files contained in 'marmite-dist'
 gulp.task('start-server', connect.server({
     root: [pkg.path.dist + '/pages/', pkg.path.dist],              // Getting the folder on which the local server is based
-    port: 8080,                                                    // Choosing a port for the local web server
+    port: 8000,                                                    // Choosing a port for the local web server
     livereload: false,
     open: {
         browser: 'chrome'                                          // Opening chrome by default (can also be firefox, edge...)

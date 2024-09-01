@@ -6,4 +6,4 @@ $(document).ready(function() {
     console.log('jQuery is ready!');
 });
 
-$('body').append('<p>Saluuut !!!</p>');
+$('body').append('<p>Salu</p>');

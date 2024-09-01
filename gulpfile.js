@@ -8,6 +8,7 @@ const gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
+    connect = require('gulp-connect-multi')(),
 
     // HTML EXTENSIONS
     twig = require('gulp-twig'),
@@ -107,7 +108,7 @@ gulp.task('css:build', async function () {
         .pipe(cleancss())                                            // Minifying CSS files
         .pipe(rename({ extname: '.min.css' }))                   // Modifying files' extension to indicate than it's minified
         .pipe(gulp.dest(pkg.path.dist + '/assets/css/'))             // Transferring minified CSS file to destination folder
-        .pipe(livereload());                                         // Redisplaying automatically the browser each time a CSS file is saved
+        // .pipe(livereload());                                         // Redisplaying automatically the browser each time a CSS file is saved
     });
 });
 
@@ -171,7 +172,7 @@ gulp.task('js:build', async function () {
     .pipe(uglify())                                               // Minifying JS file
     .pipe(rename({extname: '.min.js'}))                       // Modifying files' extension to indicate than it's minified
     .pipe(gulp.dest(pkg.path.dist + '/assets/js/'))               // Transferring minified JS file to destination folder
-    .pipe(livereload());                                          // Triggering livereload for reload automatically the browser
+    // .pipe(livereload());                                          // Triggering livereload for reload automatically the browser
 });
 
 
@@ -240,7 +241,7 @@ gulp.task('images:build-svg-sprite', function() {
     .pipe(plumber())                                            // Getting errors if they are meet
     .pipe(svgSprite(svgSpriteconfig))                           // Building the svg sprite with parameters define up
     .pipe(gulp.dest(pkg.path.dist + '/assets/img/svg/'))
-    // .pipe(livereload());                                     // Triggering livereload for reload automatically the browser
+    // .pipe(livereload());                                        // Triggering livereload for reload automatically the browser
 });
 
 
@@ -258,6 +259,29 @@ gulp.task('fonts:build', function () {
     .pipe(gulp.dest(pkg.path.dist + '/assets/fonts'));                     // Transferring fonts to destination folder
 });
 
+
+/*******************************
+ * PRACTICAL TASKS
+ ******************************/
+// Task which opened a new local web server based on files contained in 'marmite-dist'
+gulp.task('start-server', connect.server({
+    root: [pkg.path.dist + '/pages/', pkg.path.dist],              // Getting the folder on which the local server is based
+    port: 8080,                                                    // Choosing a port for the local web server
+    livereload: false,
+    open: {
+        browser: 'chrome'                                          // Opening chrome by default (can also be firefox, edge...)
+    },
+    fallback: pkg.path.dist + '/pages/'                            // Choosing the entry point for user in the local server
+}));
+
+// Task which monitored files, to automatically execute the corresponding tasks
+gulp.task('watch', function () {
+    gulp.watch(pkg.path.src + '/assets/js/**/*.js', gulp.series('js'));              // Monitoring on JS files
+    gulp.watch(pkg.path.src + '/assets/scss/**/*.scss', gulp.series('css'));         // Monitoring on SCSS files
+    gulp.watch(pkg.path.src + '/views/**/*.twig', gulp.series('html'));              // Monitoring on Twig files
+    gulp.watch(pkg.path.src + '/assets/img/**/*', gulp.series('images'));            // Monitoring on images
+    gulp.watch(pkg.path.src + '/assets/fonts/**/*', gulp.series('fonts'));           // Monitoring on fonts
+});
 
 
 /*******************************

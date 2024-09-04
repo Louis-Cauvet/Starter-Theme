@@ -1,0 +1,76 @@
+/* ====================== */
+/* HELPERS
+/* ====================== */
+
+/* ====================== */
+/* Colors - Background colors
+/* ====================== */
+@each $colorname, $color in $a-colors {
+  .h-color-#{$colorname} {
+    color: $color;
+  }
+
+  .h-bg-#{$colorname} {
+    background-color: $color;
+  }
+}
+
+
+/* ====================== */
+/* Font (sizes, weights & style)
+/* ====================== */
+$a-font-sizes: 1.5 2;
+
+@each $current-font-size in $a-font-sizes {
+  .h-fz-#{$current-font-size * 10} {
+    font-size: #{$current-font-size-fz}rem;
+  }
+}
+
+
+$a-font-weights: 300 400 500 600 700;
+
+@each $current-font-weight in $a-font-weights {
+  .h-fw-#{$current-font-weight} {
+    font-weight: $current-font-weight;
+  }
+}
+
+
+.h-fs-normal {font-style: normal}
+.h-fs-italic {font-style: italic}
+
+.h-uppercase {text-transform: uppercase;}
+.h-lowercase {text-transform: lowercase;}
+.h-capitalize {text-transform: capitalize;}
+
+
+/* ====================== */
+/* Alignements
+/* ====================== */
+.h-align-center {text-align: center;}
+.h-align-left {text-align: left;}
+.h-align-right {text-align: right;}
+
+
+/* ====================== */
+/* Margin - Padding
+/* ====================== */
+$a-spacings: 0 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 6 7 8 10 15 20;
+
+@each $current-space in $a-spacings {
+  .h-m-#{$current-space * 10} { margin: #{$current-space}rem; }
+  .h-mt-#{$current-space * 10} { margin-top: #{$current-space}rem; }
+  .h-mb-#{$current-space * 10} { margin-bottom: #{$current-space}rem; }
+  .h-ml-#{$current-space * 10} { margin-left: #{$current-space}rem; }
+  .h-mr-#{$current-space * 10} { margin-right: #{$current-space}rem; }
+  .h-my-#{$current-space * 10} { margin-top:#{$current-space}rem; margin-bottom: #{$current-space}rem; }
+  .h-mx-#{$current-space * 10} { margin-left:#{$current-space}rem; margin-right: #{$current-space}rem; }
+  .h-p-#{$current-space * 10} { padding: #{$current-space}rem; }
+  .h-pt-#{$current-space * 10} { padding-top: #{$current-space}rem; }
+  .h-pb-#{$current-space * 10} { padding-bottom: #{$current-space}rem; }
+  .h-pl-#{$current-space * 10} { padding-left: #{$current-space}rem; }
+  .h-pr-#{$current-space * 10} { padding-right: #{$current-space}rem; }
+  .h-py-#{$current-space * 10} { padding-top:#{$current-space}rem; padding-bottom: #{$current-space}rem; }
+  .h-px-#{$current-space * 10} { padding-left:#{$current-space}rem; padding-right: #{$current-space}rem; }
+}

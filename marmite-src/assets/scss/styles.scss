@@ -2,20 +2,31 @@
    GLOBAL SASS
    ========================================================================== */
 
+/* Reset
+   ========================================================================== */
+@import "reset";
+
+
 /* Settings
    ========================================================================== */
 @import
-"settings/fonts"
+"settings/colors",
+"settings/fonts",
+"settings/mediaqueries",
+"settings/transitions"
 ;
 
-body {
-  font-family: Arial, sans-serif;
-}
 
-.inner-wrap {
-  background-color: pink;
-}
+/* Atoms
+   ========================================================================== */
+@import
+"atoms/buttons",
+"atoms/icons"
+;
 
-p {
-  font-family: 'Lora', serif;
-}
+
+/* Global
+   ========================================================================== */
+@import
+"global/base"
+;

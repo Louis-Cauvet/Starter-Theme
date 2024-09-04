@@ -1,0 +1,37 @@
+/* ====================== */
+/* MEDIA QUERIES
+/* ====================== */
+
+/*
+Media queries limites based on :
+https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+ */
+/***** Small phones *****/
+$mq-1: 25em;  /* --- 400px --- */
+/***** Large phones *****/
+$mq-2: 32em;  /* --- 512px --- */
+/***** Tablets portrait *****/
+$mq-3: 38em;  /* --- 608px --- */
+$mq-4: 56em;  /* --- 896px --- */
+/***** Tablets landscape *****/
+$mq-5: 75em;  /* --- 1200px --- */
+/***** Small desktop *****/
+$mq-6: 88em;  /* --- 1408px --- */
+/***** Large desktop *****/
+$mq-7: 112em; /* --- 1792px --- */
+
+
+@media only screen and (max-width: $mq-1) {
+}
+@media only screen and (max-width: $mq-2) {
+}
+@media only screen and (max-width: $mq-3) {
+}
+@media only screen and (max-width: $mq-4) {
+}
+@media only screen and (max-width: $mq-5) {
+}
+@media only screen and (max-width: $mq-6) {
+}
+@media only screen and (max-width: $mq-7) {
+}

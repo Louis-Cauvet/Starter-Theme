@@ -1,0 +1,20 @@
+/* ====================== */
+/* BASE STYLES
+/* ====================== */
+
+@media only screen {
+  html {
+    text-size-adjust: none;      // Avoid automatic text resizing by web browser
+  }
+}
+
+html {
+  font-size: .625em;            // .1rem = 1px, 1rem = 10px, 10rem = 100px....
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;       // Remove the effect of pixelated edges on font's characters
+}

@@ -1,0 +1,43 @@
+/* ====================== */
+/* SVG ICONS
+/* ====================== */
+@use "sass:math";
+
+@mixin icon-size($icon-size) {
+  width: math.div(1rem * $icon-size, 10);
+  height: math.div(1rem * $icon-size, 10);
+}
+
+@mixin svg-color($fill-color: currentColor){
+  fill: $fill-color;
+  stroke: transparent;
+}
+
+.a-icon {
+  width: 2rem;
+  height: 2rem;
+  box-sizing: content-box;      // Allowed padding inside icons
+
+  svg {
+    display:block;
+    width:100%;
+    height:100%;
+    transition: .35s;
+  }
+}
+
+
+@each $colorname, $color in $a-colors {
+  .a-icon.as--#{"#{$colorname}"} {                           // class for changing icon's color
+    @include svg-color($color);
+  }
+}
+
+
+$a-icon-sizes: 12,15,20,25,30,35,40,45,50,80;
+@for $i from 1 through length($a-icon-sizes) {
+  $icon-size: nth($a-icon-sizes, $i);
+  .a-icon.as--#{"#{$icon-size}"} {                             // class for changing icon's size
+    @include icon-size($icon-size);
+  }
+}

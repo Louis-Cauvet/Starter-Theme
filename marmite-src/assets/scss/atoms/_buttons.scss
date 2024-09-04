@@ -1,0 +1,19 @@
+/* ====================== */
+/* BUTTONS
+/* ====================== */
+
+.a-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 400;
+  text-decoration: none;
+  background-color: $color-secondary;
+  color: $color-white;
+  border: none;
+  border-radius: .6rem;
+  cursor: pointer;
+}

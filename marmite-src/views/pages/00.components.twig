@@ -5,20 +5,16 @@
 
 {%- block mainContent %}
     <div class="inner-wrap">
-        <h2 class="a-title-1">Components Pruuuuuuts</h2>
+        <h2 class="a-title-1">Components</h2>
 
         <div class="editor-wysiwyg">
             <h3>Base icons</h3>
             {% set aIcons = [
-                "close",
-                "leaf",
-                "menu",
-                "next",
-                "prev",
-                "share",
+                "burger",
+                "search",
             ] %}
             {% for iconName in aIcons %}
-                {{ macros.svg(iconName,'','as--primary') }}
+                {{ macros.svg(iconName,'25','as--secondary') }}
             {% endfor %}
         </div>
 
@@ -29,7 +25,6 @@
             {{ macros.btnLink('Plain - icon left','as--icon','#_','prev','12','left') }}
             {{ macros.btnLink('Plain - icon right','as--icon','#_','next','12','right') }}
 
-            {{ macros.btnSpan('OK','as--circle') }}
             {{ macros.btnButton('','as--icon-only as--circle','leaf','35') }}
 
             <br>
@@ -41,7 +36,6 @@
             {{ macros.btnLink('Ghost - icon left','as--icon as--ghost','#_','prev','12','left') }}
             {{ macros.btnLink('Ghost - icon right','as--icon as--ghost','#_','next','12','right') }}
 
-            {{ macros.btnSpan('OK','as--circle as--ghost') }}
             {{ macros.btnLink('','as--icon-only as--ghost as--circle','#_','leaf','35') }}
 
             <br>

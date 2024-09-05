@@ -22,7 +22,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+
         <link rel="mask-icon" href="../assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#00aba9">
         <meta name="theme-color" content="#ffffff">
@@ -33,232 +33,532 @@
 
     
         <header class="inner-header">
-    <a href="#_">
-        <div class="editor-img">
-            <picture>
-                <img class="src">
-            </picture>
-        </div>
+    <a href="#_" class="editor-img logo" title="Retour à la page d'accueil">
+        <picture>
+            <img src="../assets/img/logos/logo.png" alt="logo">
+        </picture>
     </a>
+
+    <nav class="nav-menu">
+        <ul>
+            <li class="nav-item">
+                <a href="#">Lien 1 (sous-menu avec lien)</a>
+                <ul class="nav-submenu">
+                    <li>
+                        <a href="#">Sous-menu 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <span>Lien 2 (sous-menu sans lien)</span>
+                <ul class="nav-submenu">
+                    <li>
+                        <a href="#">Sous-menu 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#">Lien 3 (aucun sous-menu)</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="user-actions">
+        <button class="open-searchbar">
+            
+    <svg class="a-icon as--25 as--black" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-search"></use>
+    </svg>
+
+        </button>
+    </div>
 </header>
     
 
     <main role="main" class="main-content">
             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="inner-wrap">
+        <h2 class="a-title-1">Components</h2>
+
+        <div class="editor-wysiwyg">
+            <h3>Base icons</h3>
+            
+            
+                
+    <svg class="a-icon as--25 as--secondary" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-burger"></use>
+    </svg>
+
+            
+                
+    <svg class="a-icon as--25 as--secondary" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-search"></use>
+    </svg>
+
+            
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Plain Buttons</h3>
+            
+    
+    <a href="#_" title="Plain button" class="a-button">
+    
+    Plain button
+    </a>
+
+            
+    
+    <button class="a-button as--icon-only">
+    
+    <svg class="a-icon as--25" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-leaf"></use>
+    </svg>
+
+    
+    </button>
+
+            
+    
+    <a href="#_" title="Plain - icon left" class="a-button as--icon as--left">
+    
+    <svg class="a-icon as--12" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-prev"></use>
+    </svg>
+
+    Plain - icon left
+    </a>
+
+            
+    
+    <a href="#_" title="Plain - icon right" class="a-button as--icon as--right">
+    
+    <svg class="a-icon as--12" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-next"></use>
+    </svg>
+
+    Plain - icon right
+    </a>
+
+
+            
+    
+    <button class="a-button as--icon-only as--circle">
+    
+    <svg class="a-icon as--35" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-leaf"></use>
+    </svg>
+
+    
+    </button>
+
+
+            <br>
+            <br>
+
+            <h3>Ghost buttons</h3>
+            
+    
+    <a href="" title="Ghost button" class="a-button as--ghost">
+    
+    Ghost button
+    </a>
+
+            
+    
+    <a href="#_" title="" class="a-button as--icon-only as--ghost">
+    
+    <svg class="a-icon as--25" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-leaf"></use>
+    </svg>
+
+    
+    </a>
+
+            
+    
+    <a href="#_" title="Ghost - icon left" class="a-button as--icon as--ghost as--left">
+    
+    <svg class="a-icon as--12" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-prev"></use>
+    </svg>
+
+    Ghost - icon left
+    </a>
+
+            
+    
+    <a href="#_" title="Ghost - icon right" class="a-button as--icon as--ghost as--right">
+    
+    <svg class="a-icon as--12" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-next"></use>
+    </svg>
+
+    Ghost - icon right
+    </a>
+
+
+            
+    
+    <a href="#_" title="" class="a-button as--icon-only as--ghost as--circle">
+    
+    <svg class="a-icon as--35" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-leaf"></use>
+    </svg>
+
+    
+    </a>
+
+
+            <br>
+            <br>
+
+            <h3>Buttons state</h3>
+            
+    
+    <a href="#_" title="Loading" class="a-button as--loading">
+    
+    Loading
+    </a>
+
+            
+    
+    <a href="#_" title="No hover" class="a-button as--no-hover">
+    
+    No hover
+    </a>
+
+            
+    
+    <a href="#_" title="Disabled" class="a-button as--disabled">
+    
+    Disabled
+    </a>
+
+            
+    
+    <a href="#_" title="Disabled" class="a-button as--disabled as--ghost">
+    
+    Disabled
+    </a>
+
+
+            <br>
+            <br>
+
+            <h3>Tooltips</h3>
+            <a href="#_" class="a-tip as--left h-mr-25">
+                
+    
+    <button class="a-button as--icon-only as--circle">
+    
+    <svg class="a-icon as--35" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-leaf"></use>
+    </svg>
+
+    
+    </button>
+
+                <span class="a-tip-text">Tooltip text left</span>
+            </a>
+
+            <a href="#_" class="a-tip as--top h-mr-25">
+                
+    
+    <button class="a-button as--icon-only as--ghost as--circle">
+    
+    <svg class="a-icon as--35" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-tiktok"></use>
+    </svg>
+
+    
+    </button>
+
+                <span class="a-tip-text">Tooltip text top</span>
+            </a>
+
+            <a href="#_" class="a-tip as--bottom h-mr-25">
+                
+    
+    <button class="a-button as--icon-only as--circle">
+    
+    <svg class="a-icon as--35" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-twitter"></use>
+    </svg>
+
+    
+    </button>
+
+                <span class="a-tip-text">Tooltip text bottom</span>
+            </a>
+
+            <a href="#_" class="a-tip as--right h-mr-25">
+                
+    
+    <button class="a-button as--icon-only  as--ghost as--circle">
+    
+    <svg class="a-icon as--35" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-twitch"></use>
+    </svg>
+
+    
+    </button>
+
+                <span class="a-tip-text">Tooltip text right</span>
+            </a>
+
+
+
+            <a href="#_" class="a-tip as--left">
+                
+    <svg class="a-icon as--25" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-leaf"></use>
+    </svg>
+
+                <span class="a-tip-text">Tooltip text left</span>
+            </a>
+
+            <a href="#_" class="a-tip as--bottom">
+                
+    <svg class="a-icon as--25" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-leaf"></use>
+    </svg>
+
+                <span class="a-tip-text">Tooltip text bottom</span>
+            </a>
+
+        </div>
+
+
+
+
+
+        <div class="editor-wysiwyg">
+            <h3>Slider</h3>
+            <div class="slider-wrap slider-simple">
+                <div class="slider" data-slick='{"infinite": false, "dots": true, "adaptiveHeight": true}'>
+                    
+                        <div>
+                            <img src="../assets/img/uploads/chat.jpg" width="1650" height="650" alt="" >
+                        </div>
+                    
+                        <div>
+                            <img src="../assets/img/uploads/chat.jpg" width="1650" height="650" alt="" >
+                        </div>
+                    
+                        <div>
+                            <img src="../assets/img/uploads/chat.jpg" width="1650" height="650" alt="" >
+                        </div>
+                    
+                </div>
+                <div class="slider-controls">
+                    
+    <svg class="a-icon as--20 slick-prev" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-prev"></use>
+    </svg>
+
+                    
+    <svg class="a-icon as--20 slick-next" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-next"></use>
+    </svg>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Modal</h3>
+            <p class="h-mt-15">
+                <a href="#modal_1" class="a-button" data-modal>Open modal</a>
+            </p>
+
+            <div id="modal_1" class="modal">
+                <div class="inner-modal">
+                    <div class="editor-wysiwyg">
+                        <h2>Modal content</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae fugiat impedit laborum maxime natus odit quaerat quasi, saepe voluptate!</p>
+                    </div>
+                    <p class="h-align-right">
+                        <a href="#" class="a-button" rel="modal:close">Close this modal</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Pocast Player</h3>
+            <p class="h-mt-15">
+                <a href="../assets/mp3/test-podcast1.mp3" data-podcast-title="Témoignage #1" class="a-button  as--ghost js-open-podcast">Ecouter le témoignage #1</a>
+                <a href="../assets/mp3/test-podcast2.mp3" data-podcast-title="Témoignage #2" class="a-button  as--ghost js-open-podcast">Ecouter le témoignage #2</a>
+            </p>
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Video asyn load with img poster</h3>
+            
+            <div class="editor-col">
+                
+                    <div class="col">
+                        <div class="m_video">
+                            <div class="m_video-media editor-wysiwyg-video" data-id="Z1HT0E1-RFQ">
+                                <div class="m_video-player">
+                                    
+    <svg class="a-icon as--20 as--white" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-next"></use>
+    </svg>
+
+                                </div>
+                                <img src="https://img.youtube.com/vi/Z1HT0E1-RFQ/0.jpg" alt="" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col">
+                        <div class="m_video">
+                            <div class="m_video-media editor-wysiwyg-video" data-id="QmSFN_HMn4Y">
+                                <div class="m_video-player">
+                                    
+    <svg class="a-icon as--20 as--white" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-next"></use>
+    </svg>
+
+                                </div>
+                                <img src="https://img.youtube.com/vi/QmSFN_HMn4Y/0.jpg" alt="" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Revealer <small>(10 elements total, 2 visible, show 6 more)</small></h3>
+            <div class="reveal-container" data-reveal-init="2">
+                 WARNING : pour Imagify, ne pas mettre une classe sur une image car
+                        elle sera déportée sur la balise picture au dessus et enlevée de la balise img.
+                        Préférer les styles sur un wrapper de picture / img avec si besoin des styles
+                        juste sur la balise img
+                <ul>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-1" width="400" height="280" alt="img #1" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-2" width="400" height="280" alt="img #2" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-3" width="400" height="280" alt="img #3" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-4" width="400" height="280" alt="img #4" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-5" width="400" height="280" alt="img #5" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-6" width="400" height="280" alt="img #6" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-7" width="400" height="280" alt="img #7" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-8" width="400" height="280" alt="img #8" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-9" width="400" height="280" alt="img #9" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-10" width="400" height="280" alt="img #10" loading="lazy">
+                            </picture>
+                        </li>
+                    
+                </ul>
+                <button type="button" class="a-button reveal-cta">Voir plus</button>
+            </div>
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Nested accordion</h3>
+            <ul class="accordion">
+                <li>
+                    <div class="accordion-title">Accordion title #1</div>
+                    <div class="accordion-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Dicta ducimus earum ex fugiat non, nostrum quae quasi saepe
+                        vel vitae! Enim, maiores.<br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque eius ipsum magni.
+                        Aliquam ducimus et fugit nemo. Autem beatae exercitationem iusto nam, nesciunt pariatur!
+                    </div>
+                </li>
+                <li>
+                    <div class="accordion-title">Accordion title #2</div>
+                    <div class="accordion-content">
+                        <ul class="accordion-nested">
+                            <li>
+                                <div class="accordion-nested-title">Nested accordion title #1</div>
+                                <div class="accordion-content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Dicta ducimus earum ex fugiat non, nostrum quae quasi saepe
+                                    vel vitae! Enim, maiores
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accordion-nested-title">Nested accordion title #2</div>
+                                <div class="accordion-content">
+                                    Aperiam assumenda at atque, corporis cum deserunt dolore dolorum,
+                                    eaque harum labore magnam, praesentium rem similique sint soluta vel veritatis. Impedit natus pariatur quasi quia, sequi suscipit.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+        <br>
+    </div>
 
     </main>
 

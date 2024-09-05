@@ -1,6 +1,8 @@
 /* ====================== */
 /* BASE STYLES
 /* ====================== */
+::-moz-selection{ background: $color-primary; color: $color-white; text-shadow: none; }
+::selection { background: $color-primary; color: $color-white; text-shadow: none; }
 
 @media only screen {
   html {
@@ -10,12 +12,60 @@
 
 html {
   font-size: .625em;            // .1rem = 1px, 1rem = 10px, 10rem = 100px....
+  background-color: $color-bg;
 }
 
 body {
+  margin: 0 auto;
   font-family: $font-primary;
   font-size: 1.6rem;
   line-height: 1.5;
-  background-color: $color-bg;
+  font-weight: 400;
+  max-width: 218.5rem;
   -webkit-font-smoothing: antialiased;       // Remove the effect of pixelated edges on font's characters
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul, li {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+.editor-img {
+  position: relative;
+
+  picture,
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
 }

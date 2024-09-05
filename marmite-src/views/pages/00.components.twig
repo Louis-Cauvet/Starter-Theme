@@ -4,220 +4,220 @@
 {% set pageClass = '' %}
 
 {%- block mainContent %}
-{#    <div class="inner-wrap">#}
-{#        <h2 class="a-title-1">Components</h2>#}
+    <div class="inner-wrap">
+        <h2 class="a-title-1">Components</h2>
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Base icons</h3>#}
-{#            {% set aIcons = [#}
-{#                "burger",#}
-{#                "search",#}
-{#            ] %}#}
-{#            {% for iconName in aIcons %}#}
-{#                {{ macros.svg(iconName,'25','as--secondary') }}#}
-{#            {% endfor %}#}
-{#        </div>#}
+        <div class="editor-wysiwyg">
+            <h3>Base icons</h3>
+            {% set aIcons = [
+                "burger",
+                "search",
+            ] %}
+            {% for iconName in aIcons %}
+                {{ macros.svg(iconName,'25','as--secondary') }}
+            {% endfor %}
+        </div>
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Plain Buttons</h3>#}
-{#            {{ macros.btnLink('Plain button','','#_') }}#}
-{#            {{ macros.btnButton('','as--icon-only','leaf','25') }}#}
-{#            {{ macros.btnLink('Plain - icon left','as--icon','#_','prev','12','left') }}#}
-{#            {{ macros.btnLink('Plain - icon right','as--icon','#_','next','12','right') }}#}
+        <div class="editor-wysiwyg">
+            <h3>Plain Buttons</h3>
+            {{ macros.btnLink('Plain button','','#_') }}
+            {{ macros.btnButton('','as--icon-only','leaf','25') }}
+            {{ macros.btnLink('Plain - icon left','as--icon','#_','prev','12','left') }}
+            {{ macros.btnLink('Plain - icon right','as--icon','#_','next','12','right') }}
 
-{#            {{ macros.btnButton('','as--icon-only as--circle','leaf','35') }}#}
+            {{ macros.btnButton('','as--icon-only as--circle','leaf','35') }}
 
-{#            <br>#}
-{#            <br>#}
+            <br>
+            <br>
 
-{#            <h3>Ghost buttons</h3>#}
-{#            {{ macros.btnLink('Ghost button','as--ghost') }}#}
-{#            {{ macros.btnLink('','as--icon-only as--ghost','#_','leaf','25') }}#}
-{#            {{ macros.btnLink('Ghost - icon left','as--icon as--ghost','#_','prev','12','left') }}#}
-{#            {{ macros.btnLink('Ghost - icon right','as--icon as--ghost','#_','next','12','right') }}#}
+            <h3>Ghost buttons</h3>
+            {{ macros.btnLink('Ghost button','as--ghost') }}
+            {{ macros.btnLink('','as--icon-only as--ghost','#_','leaf','25') }}
+            {{ macros.btnLink('Ghost - icon left','as--icon as--ghost','#_','prev','12','left') }}
+            {{ macros.btnLink('Ghost - icon right','as--icon as--ghost','#_','next','12','right') }}
 
-{#            {{ macros.btnLink('','as--icon-only as--ghost as--circle','#_','leaf','35') }}#}
+            {{ macros.btnLink('','as--icon-only as--ghost as--circle','#_','leaf','35') }}
 
-{#            <br>#}
-{#            <br>#}
+            <br>
+            <br>
 
-{#            <h3>Buttons state</h3>#}
-{#            {{ macros.btnLink('Loading','as--loading','#_') }}#}
-{#            {{ macros.btnLink('No hover','as--no-hover','#_') }}#}
-{#            {{ macros.btnLink('Disabled','as--disabled','#_') }}#}
-{#            {{ macros.btnLink('Disabled','as--disabled as--ghost','#_') }}#}
+            <h3>Buttons state</h3>
+            {{ macros.btnLink('Loading','as--loading','#_') }}
+            {{ macros.btnLink('No hover','as--no-hover','#_') }}
+            {{ macros.btnLink('Disabled','as--disabled','#_') }}
+            {{ macros.btnLink('Disabled','as--disabled as--ghost','#_') }}
 
-{#            <br>#}
-{#            <br>#}
+            <br>
+            <br>
 
-{#            <h3>Tooltips</h3>#}
-{#            <a href="#_" class="a-tip as--left h-mr-25">#}
-{#                {{ macros.btnButton('','as--icon-only as--circle','leaf','35') }}#}
-{#                <span class="a-tip-text">Tooltip text left</span>#}
-{#            </a>#}
+            <h3>Tooltips</h3>
+            <a href="#_" class="a-tip as--left h-mr-25">
+                {{ macros.btnButton('','as--icon-only as--circle','leaf','35') }}
+                <span class="a-tip-text">Tooltip text left</span>
+            </a>
 
-{#            <a href="#_" class="a-tip as--top h-mr-25">#}
-{#                {{ macros.btnButton('','as--icon-only as--ghost as--circle','tiktok','35') }}#}
-{#                <span class="a-tip-text">Tooltip text top</span>#}
-{#            </a>#}
+            <a href="#_" class="a-tip as--top h-mr-25">
+                {{ macros.btnButton('','as--icon-only as--ghost as--circle','tiktok','35') }}
+                <span class="a-tip-text">Tooltip text top</span>
+            </a>
 
-{#            <a href="#_" class="a-tip as--bottom h-mr-25">#}
-{#                {{ macros.btnButton('','as--icon-only as--circle','twitter','35') }}#}
-{#                <span class="a-tip-text">Tooltip text bottom</span>#}
-{#            </a>#}
+            <a href="#_" class="a-tip as--bottom h-mr-25">
+                {{ macros.btnButton('','as--icon-only as--circle','twitter','35') }}
+                <span class="a-tip-text">Tooltip text bottom</span>
+            </a>
 
-{#            <a href="#_" class="a-tip as--right h-mr-25">#}
-{#                {{ macros.btnButton('','as--icon-only  as--ghost as--circle','twitch','35') }}#}
-{#                <span class="a-tip-text">Tooltip text right</span>#}
-{#            </a>#}
-
-{#            #}{##}
-
-{#            <a href="#_" class="a-tip as--left">#}
-{#                {{ macros.svg('leaf','25','') }}#}
-{#                <span class="a-tip-text">Tooltip text left</span>#}
-{#            </a>#}
-
-{#            <a href="#_" class="a-tip as--bottom">#}
-{#                {{ macros.svg('leaf','25','') }}#}
-{#                <span class="a-tip-text">Tooltip text bottom</span>#}
-{#            </a>#}
-
-{#        </div>#}
+            <a href="#_" class="a-tip as--right h-mr-25">
+                {{ macros.btnButton('','as--icon-only  as--ghost as--circle','twitch','35') }}
+                <span class="a-tip-text">Tooltip text right</span>
+            </a>
 
 
 
+            <a href="#_" class="a-tip as--left">
+                {{ macros.svg('leaf','25','') }}
+                <span class="a-tip-text">Tooltip text left</span>
+            </a>
+
+            <a href="#_" class="a-tip as--bottom">
+                {{ macros.svg('leaf','25','') }}
+                <span class="a-tip-text">Tooltip text bottom</span>
+            </a>
+
+        </div>
 
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Slider</h3>#}
-{#            <div class="slider-wrap slider-simple">#}
-{#                <div class="slider" data-slick='{"infinite": false, "dots": true, "adaptiveHeight": true}'>#}
-{#                    {% for i in 1..3 %}#}
-{#                        <div>#}
-{#                            <img src="../assets/img/uploads/chat.jpg" width="1650" height="650" alt="" >#}
-{#                        </div>#}
-{#                    {% endfor %}#}
-{#                </div>#}
-{#                <div class="slider-controls">#}
-{#                    {{ macros.svg('prev','20','slick-prev') }}#}
-{#                    {{ macros.svg('next','20','slick-next') }}#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Modal</h3>#}
-{#            <p class="h-mt-15">#}
-{#                <a href="#modal_1" class="a-button" data-modal>Open modal</a>#}
-{#            </p>#}
 
-{#            <div id="modal_1" class="modal">#}
-{#                <div class="inner-modal">#}
-{#                    <div class="editor-wysiwyg">#}
-{#                        <h2>Modal content</h2>#}
-{#                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae fugiat impedit laborum maxime natus odit quaerat quasi, saepe voluptate!</p>#}
-{#                    </div>#}
-{#                    <p class="h-align-right">#}
-{#                        <a href="#" class="a-button" rel="modal:close">Close this modal</a>#}
-{#                    </p>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Pocast Player</h3>#}
-{#            <p class="h-mt-15">#}
-{#                <a href="../assets/mp3/test-podcast1.mp3" data-podcast-title="Témoignage #1" class="a-button  as--ghost js-open-podcast">Ecouter le témoignage #1</a>#}
-{#                <a href="../assets/mp3/test-podcast2.mp3" data-podcast-title="Témoignage #2" class="a-button  as--ghost js-open-podcast">Ecouter le témoignage #2</a>#}
-{#            </p>#}
-{#        </div>#}
+        <div class="editor-wysiwyg">
+            <h3>Slider</h3>
+            <div class="slider-wrap slider-simple">
+                <div class="slider" data-slick='{"infinite": false, "dots": true, "adaptiveHeight": true}'>
+                    {% for i in 1..3 %}
+                        <div>
+                            <img src="../assets/img/uploads/chat.jpg" width="1650" height="650" alt="" >
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="slider-controls">
+                    {{ macros.svg('prev','20','slick-prev') }}
+                    {{ macros.svg('next','20','slick-next') }}
+                </div>
+            </div>
+        </div>
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Video asyn load with img poster</h3>#}
-{#            {% set videoId = [#}
-{#                'Z1HT0E1-RFQ',#}
-{#                'QmSFN_HMn4Y',#}
-{#            ]#}
-{#            %}#}
-{#            <div class="editor-col">#}
-{#                {% for myVid in videoId %}#}
-{#                    <div class="col">#}
-{#                        <div class="m_video">#}
-{#                            <div class="m_video-media editor-wysiwyg-video" data-id="{{ myVid }}">#}
-{#                                <div class="m_video-player">#}
-{#                                    {{ macros.svg('next','20','as--white') }}#}
-{#                                </div>#}
-{#                                <img src="https://img.youtube.com/vi/{{ myVid }}/0.jpg" alt="" loading="lazy">#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                {% endfor %}#}
-{#            </div>#}
-{#        </div>#}
+        <div class="editor-wysiwyg">
+            <h3>Modal</h3>
+            <p class="h-mt-15">
+                <a href="#modal_1" class="a-button" data-modal>Open modal</a>
+            </p>
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Revealer <small>(10 elements total, 2 visible, show 6 more)</small></h3>#}
-{#            <div class="reveal-container" data-reveal-init="2">#}
-{#                #}{# WARNING : pour Imagify, ne pas mettre une classe sur une image car#}
-{#                        elle sera déportée sur la balise picture au dessus et enlevée de la balise img.#}
-{#                        Préférer les styles sur un wrapper de picture / img avec si besoin des styles#}
-{#                        juste sur la balise img #}
-{#                <ul>#}
-{#                    {% for i in 1..10 %}#}
-{#                        <li class="reveal-item">#}
-{#                            #}{#<picture>#}
-{#                            <img src="https://via.placeholder.com/400x280&text=IMG-{{ i }}" width="400" height="280" alt="img #{{ i }}" loading="lazy">#}
-{#                            #}{#</picture>#}
-{#                        </li>#}
-{#                    {% endfor %}#}
-{#                </ul>#}
-{#                <button type="button" class="a-button reveal-cta">Voir plus</button>#}
-{#            </div>#}
-{#        </div>#}
+            <div id="modal_1" class="modal">
+                <div class="inner-modal">
+                    <div class="editor-wysiwyg">
+                        <h2>Modal content</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci beatae fugiat impedit laborum maxime natus odit quaerat quasi, saepe voluptate!</p>
+                    </div>
+                    <p class="h-align-right">
+                        <a href="#" class="a-button" rel="modal:close">Close this modal</a>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Nested accordion</h3>#}
-{#            <ul class="accordion">#}
-{#                <li>#}
-{#                    <div class="accordion-title">Accordion title #1</div>#}
-{#                    <div class="accordion-content">#}
-{#                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.#}
-{#                        Dicta ducimus earum ex fugiat non, nostrum quae quasi saepe#}
-{#                        vel vitae! Enim, maiores.<br>#}
-{#                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque eius ipsum magni.#}
-{#                        Aliquam ducimus et fugit nemo. Autem beatae exercitationem iusto nam, nesciunt pariatur!#}
-{#                    </div>#}
-{#                </li>#}
-{#                <li>#}
-{#                    <div class="accordion-title">Accordion title #2</div>#}
-{#                    <div class="accordion-content">#}
-{#                        <ul class="accordion-nested">#}
-{#                            <li>#}
-{#                                <div class="accordion-nested-title">Nested accordion title #1</div>#}
-{#                                <div class="accordion-content">#}
-{#                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.#}
-{#                                    Dicta ducimus earum ex fugiat non, nostrum quae quasi saepe#}
-{#                                    vel vitae! Enim, maiores#}
-{#                                </div>#}
-{#                            </li>#}
-{#                            <li>#}
-{#                                <div class="accordion-nested-title">Nested accordion title #2</div>#}
-{#                                <div class="accordion-content">#}
-{#                                    Aperiam assumenda at atque, corporis cum deserunt dolore dolorum,#}
-{#                                    eaque harum labore magnam, praesentium rem similique sint soluta vel veritatis. Impedit natus pariatur quasi quia, sequi suscipit.#}
-{#                                </div>#}
-{#                            </li>#}
-{#                        </ul>#}
-{#                    </div>#}
-{#                </li>#}
-{#            </ul>#}
-{#        </div>#}
+        <div class="editor-wysiwyg">
+            <h3>Pocast Player</h3>
+            <p class="h-mt-15">
+                <a href="../assets/mp3/test-podcast1.mp3" data-podcast-title="Témoignage #1" class="a-button  as--ghost js-open-podcast">Ecouter le témoignage #1</a>
+                <a href="../assets/mp3/test-podcast2.mp3" data-podcast-title="Témoignage #2" class="a-button  as--ghost js-open-podcast">Ecouter le témoignage #2</a>
+            </p>
+        </div>
 
-{#        <br>#}
-{#        <br>#}
-{#        <br>#}
-{#    </div>#}
+        <div class="editor-wysiwyg">
+            <h3>Video asyn load with img poster</h3>
+            {% set videoId = [
+                'Z1HT0E1-RFQ',
+                'QmSFN_HMn4Y',
+            ]
+            %}
+            <div class="editor-col">
+                {% for myVid in videoId %}
+                    <div class="col">
+                        <div class="m_video">
+                            <div class="m_video-media editor-wysiwyg-video" data-id="{{ myVid }}">
+                                <div class="m_video-player">
+                                    {{ macros.svg('next','20','as--white') }}
+                                </div>
+                                <img src="https://img.youtube.com/vi/{{ myVid }}/0.jpg" alt="" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Revealer <small>(10 elements total, 2 visible, show 6 more)</small></h3>
+            <div class="reveal-container" data-reveal-init="2">
+                 WARNING : pour Imagify, ne pas mettre une classe sur une image car
+                        elle sera déportée sur la balise picture au dessus et enlevée de la balise img.
+                        Préférer les styles sur un wrapper de picture / img avec si besoin des styles
+                        juste sur la balise img
+                <ul>
+                    {% for i in 1..10 %}
+                        <li class="reveal-item">
+                            <picture>
+                            <img src="https://via.placeholder.com/400x280&text=IMG-{{ i }}" width="400" height="280" alt="img #{{ i }}" loading="lazy">
+                            </picture>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <button type="button" class="a-button reveal-cta">Voir plus</button>
+            </div>
+        </div>
+
+        <div class="editor-wysiwyg">
+            <h3>Nested accordion</h3>
+            <ul class="accordion">
+                <li>
+                    <div class="accordion-title">Accordion title #1</div>
+                    <div class="accordion-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Dicta ducimus earum ex fugiat non, nostrum quae quasi saepe
+                        vel vitae! Enim, maiores.<br>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus atque eius ipsum magni.
+                        Aliquam ducimus et fugit nemo. Autem beatae exercitationem iusto nam, nesciunt pariatur!
+                    </div>
+                </li>
+                <li>
+                    <div class="accordion-title">Accordion title #2</div>
+                    <div class="accordion-content">
+                        <ul class="accordion-nested">
+                            <li>
+                                <div class="accordion-nested-title">Nested accordion title #1</div>
+                                <div class="accordion-content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Dicta ducimus earum ex fugiat non, nostrum quae quasi saepe
+                                    vel vitae! Enim, maiores
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accordion-nested-title">Nested accordion title #2</div>
+                                <div class="accordion-content">
+                                    Aperiam assumenda at atque, corporis cum deserunt dolore dolorum,
+                                    eaque harum labore magnam, praesentium rem similique sint soluta vel veritatis. Impedit natus pariatur quasi quia, sequi suscipit.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <br>
+        <br>
+        <br>
+    </div>
 {% endblock mainContent -%}
 
 

@@ -1,9 +1,49 @@
 <header class="inner-header">
-    <a href="#_">
-        <div class="editor-img">
-            <picture>
-                <img class="src">
-            </picture>
-        </div>
+    <a href="#_" class="editor-img logo" title="Retour à la page d'accueil">
+        <picture>
+            <img src="../assets/img/logos/logo.png" alt="logo">
+        </picture>
     </a>
+
+    <nav class="nav-menu">
+        <ul>
+            <li class="nav-item">
+                <a href="#">Lien 1 (sous-menu avec lien)</a>
+                <ul class="nav-submenu">
+                    <li>
+                        <a href="#">Sous-menu 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <span>Lien 2 (sous-menu sans lien)</span>
+                <ul class="nav-submenu">
+                    <li>
+                        <a href="#">Sous-menu 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Sous-menu 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#">Lien 3 (aucun sous-menu)</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="user-actions">
+        <button class="open-searchbar">
+            {{ macros.svg('search','25','as--black') }}
+        </button>
+    </div>
 </header>

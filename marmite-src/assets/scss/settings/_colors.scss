@@ -1,0 +1,28 @@
+/* ====================== */
+/* COLORS VARIABLES
+/* ====================== */
+
+$color-primary: #7fd280;
+$color-secondary: #227891;
+
+$color-black: #000;
+$color-white: #fff;
+
+$color-text: #2A2A2A;
+$color-bg: #EFEFEF;
+$color-border: rgba(#595450, .3);
+
+$color-info: #5aaafa;
+$color-success: #5aa700;
+$color-error: #e0182d;
+$color-warning: #efc100;
+
+// Define colors' array for use them in helpers
+$a-colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  black: $color-black,
+  white: $color-white,
+  text: $color-text,
+  bg: $color-bg
+);

@@ -1,0 +1,12 @@
+{
+    "name": "louis/starter-theme",
+    "authors": [
+        {
+            "name": "Louis-Cauvet",
+            "email": "louiscauvet8@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.11"
+    }
+}

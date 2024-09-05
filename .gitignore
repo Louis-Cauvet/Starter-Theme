@@ -1,0 +1,17 @@
+# OS or Editor folders
+._*
+.cache
+.DS_Store
+.idea
+Thumbs.db
+.tmp
+nbproject
+
+# Node
+node_modules
+
+# Composer
+/vendor
+
+# Logs
+*.log

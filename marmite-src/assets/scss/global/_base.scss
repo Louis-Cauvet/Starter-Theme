@@ -1,8 +1,16 @@
 /* ====================== */
 /* BASE STYLES
 /* ====================== */
+
+// Personnalize style when a element is selected by the user
 ::-moz-selection{ background: $color-primary; color: $color-white; text-shadow: none; }
 ::selection { background: $color-primary; color: $color-white; text-shadow: none; }
+
+// Personnalize style when a element is focused during keyboard's navigation
+*:focus-visible {
+  outline: 3px solid red;
+  outline-offset: 3px;
+}
 
 @media only screen {
   html {
@@ -21,13 +29,17 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   font-weight: 400;
-  max-width: 218.5rem;
+  max-width: 212.5rem;
   -webkit-font-smoothing: antialiased;       // Remove the effect of pixelated edges on font's characters
 }
 
 *,
 *::before,
 *::after {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
   box-sizing: border-box;
 }
 
@@ -52,6 +64,15 @@ a {
 button {
   background: transparent;
   border: none;
+}
+
+.hidden-navbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .editor-img {

@@ -105,7 +105,10 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style>
- .svg-icon-burger-dims { width: 24px; height: 24px; }
+ .svg-icon-arrow-down-dims { width: 32px; height: 32px; }
+ .svg-icon-arrow-left-dims { width: 32px; height: 32px; }
+ .svg-icon-burger-dims { width: 32px; height: 25.6px; }
+ .svg-icon-close-dims { width: 27px; height: 28px; }
  .svg-icon-search-dims { width: 24px; height: 24px; }
 </style>
 
@@ -128,7 +131,10 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
-     <symbol viewBox="0 0 24 24" fill="none" id="icon-burger" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h15M5 17h15M5 7h15" stroke="#000" stroke-width="2" stroke-linecap="round"/></symbol>
+     <symbol viewBox="0 0 330 330" xml:space="preserve" id="icon-arrow-down" xmlns="http://www.w3.org/2000/svg"><path d="M325.607 79.393c-5.857-5.857-15.355-5.858-21.213.001l-139.39 139.393L25.607 79.393c-5.857-5.857-15.355-5.858-21.213.001-5.858 5.858-5.858 15.355 0 21.213l150.004 150a14.999 14.999 0 0 0 21.212-.001l149.996-150c5.859-5.857 5.859-15.355.001-21.213z"/></symbol>
+     <symbol viewBox="0 0 256 256" xml:space="preserve" id="icon-arrow-left" xmlns="http://www.w3.org/2000/svg"><path d="M186.164 254.307a9.806 9.806 0 0 0 6.955-2.88c3.841-3.84 3.841-10.069 0-13.907L83.459 127.857l109.66-109.66c3.841-3.842 3.841-10.069 0-13.91-3.841-3.839-10.068-3.839-13.91 0L62.594 120.902c-3.84 3.838-3.84 10.068 0 13.907L179.21 251.424a9.797 9.797 0 0 0 6.955 2.883z"/></symbol>
+     <symbol viewBox="0 0 50 40" id="icon-burger" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="8" width="40" height="5" rx="2.5" ry="2.5"/><rect x="5" y="18" width="40" height="5" rx="2.5" ry="2.5"/><rect x="5" y="28" width="40" height="5" rx="2.5" ry="2.5"/></symbol>
+     <symbol viewBox="0 0 27 28" id="icon-close" xmlns="http://www.w3.org/2000/svg"><path d="M2.491 2.553c.654-.317 1.118-.17 1.547.277a14816.06 14816.06 0 0 0 20.673 21.3c.547.563.556 1.22.027 1.761-.53.541-1.173.53-1.72-.033A33731.233 33731.233 0 0 0 2.332 4.573c-.431-.444-.572-.92-.263-1.587l.422-.433Z"/><path d="M24.543 2.592c-.653-.317-1.117-.17-1.546.277A12803.575 12803.575 0 0 1 2.325 24.17c-.546.563-.556 1.22-.026 1.761.53.541 1.172.528 1.719-.033C10.91 18.8 17.806 11.705 24.704 4.613c.432-.444.572-.92.263-1.588l-.424-.433Z"/></symbol>
      <symbol viewBox="0 0 24 24" id="icon-search" xmlns="http://www.w3.org/2000/svg"><path d="M17.04 15.624a9.004 9.004 0 1 0-1.415 1.415l5.667 5.668a1 1 0 0 0 1.415-1.415l-5.668-5.668Zm-7.036 1.393a7.013 7.013 0 1 1 0-14.026 7.013 7.013 0 0 1 0 14.026Z"/></symbol>
 </svg>
 
@@ -156,6 +162,22 @@ embedded above. They may be styled via CSS.
             <h3>A) Inline SVG with embedded sprite</h3>
             <ul>
 
+             <li title="icon-arrow-down">
+                    <div class="icon-box">
+                        <svg class="svg-icon-arrow-down-dims">
+                            <use xlink:href="#icon-arrow-down"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-arrow-down, </h2>
+                </li>
+             <li title="icon-arrow-left">
+                    <div class="icon-box">
+                        <svg class="svg-icon-arrow-left-dims">
+                            <use xlink:href="#icon-arrow-left"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-arrow-left, </h2>
+                </li>
              <li title="icon-burger">
                     <div class="icon-box">
                         <svg class="svg-icon-burger-dims">
@@ -163,6 +185,14 @@ embedded above. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>icon-burger, </h2>
+                </li>
+             <li title="icon-close">
+                    <div class="icon-box">
+                        <svg class="svg-icon-close-dims">
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-close, </h2>
                 </li>
              <li title="icon-search">
                     <div class="icon-box">
@@ -191,6 +221,22 @@ SVG sprite. They may be styled via CSS.
             <h3>B) Inline SVG with external sprite</h3>
             <ul>
 
+             <li title="icon-arrow-down">
+                    <div class="icon-box">
+                        <svg class="svg-icon-arrow-down-dims">
+                            <use xlink:href="icon-sprite.svg#icon-arrow-down"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-arrow-down</h2>
+                </li>
+             <li title="icon-arrow-left">
+                    <div class="icon-box">
+                        <svg class="svg-icon-arrow-left-dims">
+                            <use xlink:href="icon-sprite.svg#icon-arrow-left"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-arrow-left</h2>
+                </li>
              <li title="icon-burger">
                     <div class="icon-box">
                         <svg class="svg-icon-burger-dims">
@@ -198,6 +244,14 @@ SVG sprite. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>icon-burger</h2>
+                </li>
+             <li title="icon-close">
+                    <div class="icon-box">
+                        <svg class="svg-icon-close-dims">
+                            <use xlink:href="icon-sprite.svg#icon-close"></use>
+                        </svg>
+                    </div>
+                    <h2>icon-close</h2>
                 </li>
              <li title="icon-search">
                     <div class="icon-box">
@@ -215,7 +269,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Thu, 05 Sep 2024 13:09:31 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Sat, 14 Sep 2024 17:06:01 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>

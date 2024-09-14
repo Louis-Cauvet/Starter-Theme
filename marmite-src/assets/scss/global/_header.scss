@@ -1,42 +1,285 @@
+$inner-header-height : 8rem;
+$inner-header-color : $color-white;
+
 .inner-header {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
   padding: .5rem 1.2rem;
   width: 100%;
-  height: 8rem;
-  background-color: $color-white;
+  min-height: $inner-header-height;
+  background-color: $inner-header-color;
   z-index: 5;
+
+  @media only screen and (max-width: $mq-4) {
+    justify-content: space-between;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $inner-header-color;
+  }
 
   .logo {
     display: block;
     height: 100%;
     width: auto;
     max-width: 5rem;
+    z-index: 4;
   }
 
   .nav-menu {
+    padding: 1rem 0;
     flex-grow: 2;
+
+    @media only screen and (max-width: $mq-4) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0;
+      width: 100%;
+      height: calc(100svh - $inner-header-height);
+      translate: 0 -100%;
+      background-color: $color-bg;
+      z-index: -1;
+      transition: translate .5s $default-transition-function;
+
+      &.is-open {
+        translate: 0 $inner-header-height;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../img/bg/bg-metal-bubbles.png");
+        z-index: -1;
+      }
+    }
 
     ul {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
+      gap: 1.5rem 0;
+      flex-wrap: wrap;
 
-      .nav-submenu {
-        position: absolute;
-        left: 0;
-        top: 8rem;
-        translate: 0 -105%;
-        padding: 1rem 1.5rem;
-        background-color: orange;
-        width: 100%;
-        z-index: -1;
-        transition: translate .35s $default-transition-function;
+      @media only screen and (max-width: $mq-4) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        gap: .8rem 0;
+        margin: 4rem 3rem;
+        padding: 2rem 1.5rem 4rem;
+        height: calc(100% - 4*2rem - 2rem);
+        background-color: $color-white;
+        overflow-y: scroll;
+
+        li {
+          width: 100%;
+          border-bottom: .1rem solid $color-border;
+
+          &:has(.nav-submenu) {
+            cursor: pointer;
+          }
+
+          .a-button {
+            padding: 1.5rem 3rem;
+            width: 100%;
+          }
+        }
       }
+    }
+
+    .nav-item {
+      .nav-item-name {
+        position: relative;
+        padding: 1.2rem 1.5rem;
+        text-align: center;
+        z-index: 4;
+        transition: color .3s $default-transition-function;
+
+        @media only screen and (max-width: $mq-4) {
+          display: block;
+          padding: .75rem 3.75rem .75rem 0;
+          width: 100%;
+          text-align: start;
+
+          &:hover {
+            color: $color-primary;
+
+            .a-icon {
+              fill: $color-primary;
+            }
+          }
+
+          .a-icon {
+            position: absolute;
+            top: 1.15rem;
+            right: .5rem;
+          }
+        }
+
+        &.is-indicate {
+          color: $color-white;
+
+          @media only screen and (max-width: $mq-4) {
+            color: $color-black;
+
+            &:hover {
+              color: $color-primary;
+
+              .a-icon {
+                fill: $color-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav-submenu {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      translate: 0 -105%;
+      column-gap: 3rem;
+      padding: 1.2rem 5rem;
+      background-color: $inner-header-color;
+      width: 100%;
+      border-top: .1rem solid $color-border;
+      z-index: -2;
+      cursor: initial;
+      transition: translate .35s $default-transition-function;
+
+      @media only screen and (max-width: $mq-4) {
+        top: 0;
+        translate: -100% 0;
+        margin: 0;
+        padding: 0;
+        height: calc(100svh - $inner-header-height);
+        background-color: $color-bg;
+        z-index: 5;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url("../img/bg/bg-metal-bubbles.png");
+          z-index: -1;
+        }
+      }
+
+      &.is-open {
+        translate: 0 0;
+      }
+
+      .close-submenu {
+        position: absolute;
+        top: .75rem;
+        right: 3rem;
+        transition: color .3s $default-transition-function;
+
+        &:hover {
+          color: $color-primary;
+
+          .a-icon {
+            fill: $color-primary;
+          }
+        }
+      }
+
+      >ul {
+        gap: 1.5rem 2.5rem;
+
+        @media only screen and (max-width: $mq-4) {
+          gap: 0.8rem 0;
+        }
+
+        >li {
+          text-align: center;
+
+          @media only screen and (max-width: $mq-4) {
+            padding: .75rem 0;
+            text-align: start;
+          }
+
+          &:has(a) {
+            cursor: pointer;
+          }
+
+          &:hover {
+            color: $color-primary;
+          }
+
+          .submenu-title {
+            display: block;
+            color: $color-primary;
+            font-weight: 700;
+            transition: color .3s $default-transition-function;
+
+            &:not(a) {
+              cursor: initial;
+            }
+          }
+
+          a.submenu-title {
+            &:hover {
+              color: $color-dark-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 4;
+
+    .a-icon {
+      &:hover {
+        fill: $color-primary;
+      }
+    }
+
+    .a-button {
+      white-space: nowrap;
+    }
+
+    .open-mobile-menu,
+    .close-mobile-menu {
+      &.as--hidden {
+        display: none;
+      }
+    }
+  }
+
+  .nav-indicator {
+    position: absolute;
+    left: -3rem;
+    width: 3rem;
+    background-color: $color-primary;
+    transition: all .3s $default-transition-function;
+
+    @media only screen and (max-width: $mq-4) {
+      display: none;
     }
   }
 }

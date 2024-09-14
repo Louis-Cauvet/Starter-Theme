@@ -33,44 +33,88 @@
 
     
         <header class="inner-header">
-    <a href="#_" class="editor-img logo" title="Retour à la page d'accueil">
-        <picture>
+    <a href="#_" class="editor-img logo" title="Retour à la page d'accueil" tabindex="1">
             <img src="../assets/img/logos/logo.png" alt="logo">
-        </picture>
     </a>
 
     <nav class="nav-menu">
-        <ul>
+        <ul class="hidden-navbar">
             <li class="nav-item">
-                <a href="#">Lien 1 (sous-menu avec lien)</a>
-                <ul class="nav-submenu">
-                    <li>
-                        <a href="#">Sous-menu 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Sous-menu 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Sous-menu 3</a>
-                    </li>
-                </ul>
+                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="nav-item-name">
+                    Lien 1 (sous-menu avec lien)
+                    
+    <svg class="a-icon as--20 as--black h-show-mobile" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-down"></use>
+    </svg>
+
+                </a>
+                <div class="nav-submenu">
+                    <button class="close-submenu h-show-mobile">
+                        
+    <svg class="a-icon as--12 as--text" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-left"></use>
+    </svg>
+
+                        Retour
+                    </button>
+                    <ul class="hidden-navbar">
+                        <li class="h-show-mobile">
+                            <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="submenu-title">Lien 1 (sous-menu avec lien)</a>
+                        </li>
+                        <li>
+                            <a href="#_">Sous-menu 1</a>
+                        </li>
+                        <li>
+                            <a href="#_">Sous-menu 2</a>
+                        </li>
+                        <li>
+                            <a href="#_">Sous-menu 3</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item">
-                <span>Lien 2 (sous-menu sans lien)</span>
-                <ul class="nav-submenu">
-                    <li>
-                        <a href="#">Sous-menu 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Sous-menu 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Sous-menu 3</a>
-                    </li>
-                </ul>
+                <button class="nav-item-name">
+                    Lien 2 (sous-menu sans lien)
+                    
+    <svg class="a-icon as--20 as--text h-show-mobile" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-down"></use>
+    </svg>
+
+                </button>
+                <div class="nav-submenu">
+                    <button class="close-submenu h-show-mobile">
+                        
+    <svg class="a-icon as--12 as--text" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-left"></use>
+    </svg>
+
+                        Retour
+                    </button>
+                    <ul class="hidden-navbar">
+                        <li class="h-show-mobile">
+                            <span class="submenu-title"> Lien 2 (sous-menu sans lien)</span>
+                        </li>
+                        <li>
+                            <a href="#_">Sous-menu 1</a>
+                        </li>
+                        <li>
+                            <a href="#_">Sous-menu 2</a>
+                        </li>
+                    </ul>
+                </div>
             </li>
-            <li class="nav-item">
-                <a href="#">Lien 3 (aucun sous-menu)</a>
+            <li class="nav-item active">
+                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="nav-item-name">Lien 3 (aucun sous-menu)</a>
+            </li>
+            <li class="h-show-mobile">
+                
+    
+    <a href="#_" title="Nous contacter" class="a-button h-bg-secondary h-uppercase h-mt-10">
+    
+    Nous contacter
+    </a>
+
             </li>
         </ul>
     </nav>
@@ -78,12 +122,35 @@
     <div class="user-actions">
         <button class="open-searchbar">
             
-    <svg class="a-icon as--25 as--black" aria-hidden="true" focusable="false">
+    <svg class="a-icon as--25 as--text" aria-hidden="true" focusable="false">
         <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-search"></use>
     </svg>
 
         </button>
+        <button class="open-mobile-menu h-show-mobile" tabindex="1">
+            
+    <svg class="a-icon as--35 as--text" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-burger"></use>
+    </svg>
+
+        </button>
+        <button class="close-mobile-menu h-show-mobile as--hidden" tabindex="1">
+            
+    <svg class="a-icon as--25 as--text" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-close"></use>
+    </svg>
+
+        </button>
+        
+    
+    <a href="#_" title="Nous contacter" class="a-button h-bg-secondary h-hide-mobile">
+    
+    Nous contacter
+    </a>
+
     </div>
+
+    <span class="nav-indicator"></span>
 </header>
     
 

@@ -6,11 +6,11 @@
 /* Colors - Background colors
 /* ====================== */
 @each $colorname, $color in $a-colors {
-  .h-color-#{$colorname} {
+  .h-color-#{"#{$colorname}"} {
     color: $color;
   }
 
-  .h-bg-#{$colorname} {
+  .h-bg-#{"#{$colorname}"} {
     background-color: $color;
   }
 }
@@ -23,7 +23,7 @@ $a-font-sizes: 1.5 2;
 
 @each $current-font-size in $a-font-sizes {
   .h-fz-#{$current-font-size * 10} {
-    font-size: #{$current-font-size-fz}rem;
+    font-size: #{$current-font-size}rem;
   }
 }
 
@@ -73,4 +73,22 @@ $a-spacings: 0 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 6 7 8 10 15 20;
   .h-pr-#{$current-space * 10} { padding-right: #{$current-space}rem; }
   .h-py-#{$current-space * 10} { padding-top:#{$current-space}rem; padding-bottom: #{$current-space}rem; }
   .h-px-#{$current-space * 10} { padding-left:#{$current-space}rem; padding-right: #{$current-space}rem; }
+}
+
+
+/* ====================== */
+/* Mobile's format transition
+/* ====================== */
+.h-hide-mobile {
+  @media only screen and (max-width: $mq-4) {
+    display: none !important;
+  }
+}
+
+.h-show-mobile {
+  display: none; 
+
+  @media only screen and (max-width: $mq-4) {
+    display: block;
+  }
 }

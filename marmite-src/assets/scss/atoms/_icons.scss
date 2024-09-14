@@ -17,6 +17,7 @@
   width: 2rem;
   height: 2rem;
   box-sizing: content-box;      // Allowed padding inside icons
+  transition: all .2s $default-transition-function;
 
   svg {
     display:block;
@@ -34,7 +35,7 @@
 }
 
 
-$a-icon-sizes: 12,15,20,25,30,35,40,45,50,80;
+$a-icon-sizes: 10,12,15,20,25,30,35,40,45,50,80;
 @for $i from 1 through length($a-icon-sizes) {
   $icon-size: nth($a-icon-sizes, $i);
   .a-icon.as--#{"#{$icon-size}"} {                             // class for changing icon's size

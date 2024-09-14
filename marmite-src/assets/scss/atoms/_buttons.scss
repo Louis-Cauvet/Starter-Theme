@@ -3,17 +3,31 @@
 /* ====================== */
 
 .a-button {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 1rem 1.5rem;
-  font-size: 1.4rem;
   line-height: 1.2;
   font-weight: 400;
   text-decoration: none;
-  background-color: $color-secondary;
+  text-align: center;
+  background-color: $color-primary;
   color: $color-white;
   border: none;
-  border-radius: .6rem;
+  overflow: hidden;
   cursor: pointer;
+  transition: background-color .25s $default-transition-function;
+
+  &:hover {
+    background-color: $color-dark-primary;
+  }
+
+  &.h-bg-secondary {
+    background-color: $color-secondary;
+
+    &:hover {
+      background-color: $color-dark-secondary;
+    }
+  }
 }

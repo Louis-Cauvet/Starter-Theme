@@ -1,0 +1,39 @@
+.editor-img {
+  position: relative;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.editor-img,
+.bg-img {
+  &.as--overlay {
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-overlay;
+      opacity: .35;
+    }
+  }
+
+  picture,
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}

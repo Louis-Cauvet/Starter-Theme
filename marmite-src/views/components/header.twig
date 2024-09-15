@@ -1,23 +1,23 @@
-<header class="inner-header">
+<header class="inner-header" role="banner">
     <a href="#_" class="editor-img logo" title="Retour à la page d'accueil" tabindex="1">
-            <img src="../assets/img/logos/logo.png" alt="logo">
+        <img src="../assets/img/logos/logo.png" alt="logo">
     </a>
 
-    <nav class="nav-menu">
+    <nav class="nav-menu" role="navigation" aria-label="Menu principal" aria-expanded="false">
         <ul class="hidden-navbar">
             <li class="nav-item">
-                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="nav-item-name">
+                <a href="#_" class="nav-item-name">
                     Lien 1 (sous-menu avec lien)
                     {{ macros.svg('arrow-down','20','as--black h-show-mobile') }}
                 </a>
-                <div class="nav-submenu">
+                <div class="nav-submenu" aria-expanded="false">
                     <button class="close-submenu h-show-mobile">
                         {{ macros.svg('arrow-left','12','as--text') }}
                         Retour
                     </button>
                     <ul class="hidden-navbar">
                         <li class="h-show-mobile">
-                            <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="submenu-title">Lien 1 (sous-menu avec lien)</a>
+                            <a href="#_" class="submenu-title">Lien 1 (sous-menu avec lien)</a>
                         </li>
                         <li>
                             <a href="#_">Sous-menu 1</a>
@@ -36,7 +36,7 @@
                     Lien 2 (sous-menu sans lien)
                     {{ macros.svg('arrow-down','20','as--text h-show-mobile') }}
                 </button>
-                <div class="nav-submenu">
+                <div class="nav-submenu" aria-expanded="false">
                     <button class="close-submenu h-show-mobile">
                         {{ macros.svg('arrow-left','12','as--text') }}
                         Retour
@@ -55,7 +55,7 @@
                 </div>
             </li>
             <li class="nav-item active">
-                <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal" class="nav-item-name">Lien 3 (aucun sous-menu)</a>
+                <a href="#_" class="nav-item-name">Lien 3 (aucun sous-menu)</a>
             </li>
             <li class="h-show-mobile">
                 {{ macros.btnLink('Nous contacter','h-bg-secondary h-uppercase h-mt-10','#_') }}
@@ -66,14 +66,28 @@
     <div class="user-actions">
         <button class="open-searchbar">
             {{ macros.svg('search','25','as--text') }}
+            <span class="screen-reader-only">Ouvrir le moteur de recherche interne</span>
         </button>
-        <button class="open-mobile-menu h-show-mobile" tabindex="1">
+        <button class="close-searchbar as--hidden">
+            {{ macros.svg('close','25','as--text') }}
+            <span class="screen-reader-only">Fermer le moteur de recherche interne</span>
+        </button>
+
+        <button class="open-mobile-menu h-show-mobile" tabindex="1" aria-controls="mobile-menu">
             {{ macros.svg('burger','35','as--text') }}
+            <span class="screen-reader-only">Ouvrir le menu mobile</span>
         </button>
         <button class="close-mobile-menu h-show-mobile as--hidden" tabindex="1">
             {{ macros.svg('close','25','as--text') }}
+            <span class="screen-reader-only">Fermer le menu mobile</span>
         </button>
-        {{ macros.btnLink('Nous contacter','h-bg-secondary h-hide-mobile','#_') }}
+    </div>
+
+    <div class="searchbar" aria-expanded="false">
+        <form action="">
+            <input type="search" id="search-terms" placeholder="Mots clés" aria-label="Rechercher des contenus sur le site">
+            <button type="submit" class="a-button">Rechercher</button>
+        </form>
     </div>
 
     <span class="nav-indicator"></span>

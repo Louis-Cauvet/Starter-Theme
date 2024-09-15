@@ -9,6 +9,7 @@ $inner-header-color : $color-white;
   gap: 2rem;
   padding: .5rem 1.2rem;
   width: 100%;
+  max-width: inherit;
   min-height: $inner-header-height;
   background-color: $inner-header-color;
   z-index: 5;
@@ -212,6 +213,7 @@ $inner-header-color : $color-white;
 
         >li {
           text-align: center;
+          transition: color .3s $default-transition-function;
 
           @media only screen and (max-width: $mq-4) {
             padding: .75rem 0;
@@ -264,9 +266,81 @@ $inner-header-color : $color-white;
     }
 
     .open-mobile-menu,
-    .close-mobile-menu {
+    .close-mobile-menu,
+    .open-searchbar,
+    .close-searchbar, {
       &.as--hidden {
         display: none;
+      }
+    }
+  }
+
+  .searchbar {
+    z-index: 4;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    translate: 100% 100%;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    background-color: $color-white;
+    border-top: .1rem solid $color-border;
+    transition: translate .5s $default-transition-function;
+
+    @media only screen and (max-width: $mq-4) {
+      top: 0;
+      bottom: initial;
+      translate: 100% 0;
+      padding: 0;
+      border: none;
+    }
+
+    @media only screen and (max-width: $mq-2) {
+      top: initial;
+      bottom: 0;
+      translate: 100% 100%;
+      padding: 1rem 1.75rem 1rem 1.75rem;
+      width: 100%;
+      border-top: .1rem solid $color-border;
+    }
+
+    &.is-open {
+      translate: 0 100%;
+
+      @media only screen and (max-width: $mq-4) {
+        translate: -12rem;
+      }
+
+      @media only screen and (max-width: $mq-2) {
+        translate: 0 100%;
+      }
+    }
+
+    form {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: $mq-4) {
+        gap: 1.75rem;
+        height: $inner-header-height;
+      }
+
+      @media only screen and (max-width: $mq-2) {
+        justify-content: flex-end;
+        height: fit-content;
+      }
+
+      input[type="search"] {
+        width: 30rem;
+
+        @media only screen and (max-width: $mq-4) {
+          width: 35vw;
+        }
+
+        @media only screen and (max-width: $mq-2) {
+          flex-grow: 2;
+        }
       }
     }
   }
@@ -282,4 +356,8 @@ $inner-header-color : $color-white;
       display: none;
     }
   }
+}
+
+.main-content {
+  padding-top: $inner-header-height;
 }

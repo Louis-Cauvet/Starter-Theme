@@ -22,7 +22,9 @@
    ========================================================================== */
 @import
 "atoms/buttons",
-"atoms/icons"
+"atoms/headings",
+"atoms/icons",
+"atoms/images"
 ;
 
 
@@ -31,4 +33,12 @@
 @import
 "global/base",
 "global/header"
+;
+
+
+/* Components
+   ========================================================================== */
+@import
+"components/banners",
+"components/forms"
 ;

@@ -4,13 +4,18 @@
 {% set pageClass = '' %}
 
 {%- block mainContent %}
+    {% include "../components/banner.twig" %}
+
     <div class="inner-wrap">
         <h2 class="a-title-1">Components</h2>
 
         <div class="editor-wysiwyg">
             <h3>Base icons</h3>
             {% set aIcons = [
+                "arrow-down",
+                "arrow-left",
                 "burger",
+                "close",
                 "search",
             ] %}
             {% for iconName in aIcons %}

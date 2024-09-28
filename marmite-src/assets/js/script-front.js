@@ -73,9 +73,9 @@ function manageMenuNavigationSystem() {
                 height: $itemHeight + 'px',
             });
 
-            $('.nav-item-name').removeClass('is-indicate');
+            $(".nav-item-name").removeClass('is-indicate');
             $(this).addClass('is-indicate');
-        });
+        })
         $('.nav-submenu a').on('focus', function () {
             $('.nav-submenu').removeClass('is-open').attr('aria-expanded', 'false');
             $(this).closest('.nav-submenu').addClass('is-open').attr('aria-expanded', 'true');

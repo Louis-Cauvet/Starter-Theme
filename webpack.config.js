@@ -3,6 +3,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // Customizable plugin
 function generateHtmlPlugins(templateDir) {
@@ -28,14 +29,18 @@ const htmlPlugins = generateHtmlPlugins('./marmite-src/views/pages');
 module.exports = {
     entry: {
         styles: path.resolve(__dirname, './marmite-src/assets/scss/styles.scss'),
-        print: path.resolve(__dirname, './marmite-src/assets/scss/print.scss')
+        print: path.resolve(__dirname, './marmite-src/assets/scss/print.scss'),
+        script: path.resolve(__dirname, './marmite-src/assets/js/script-front.js')
     },
 
     output: {
         path: path.resolve(__dirname, './marmite-dist/assets'),
-        filename: 'jsbundles/[name].bundle.js',
+        filename: (pathData) => {
+            return pathData.chunk.name === 'script'
+                ? 'js/[name].min.js'
+                : 'jsbundles/[name].bundle.js';
+        },
         clean: true,
-
     },
 
     module: {
@@ -45,7 +50,7 @@ module.exports = {
                 use: ['twig-loader']
             },
             {
-                test: /\.(scss)$/,
+                test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -59,6 +64,24 @@ module.exports = {
                     },
                     'sass-loader'
                 ],
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    },
+                    {
+                        loader: 'eslint-loader',
+                        options: {
+                            emitWarning: true,
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -74,6 +97,9 @@ module.exports = {
         minimize: true,
         minimizer: [
             new CssMinimizerPlugin(),
+            new TerserPlugin({
+               test:  /\.js(\?.*)?$/i
+            }),
         ],
     },
 

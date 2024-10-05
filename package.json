@@ -4,7 +4,8 @@
   "description": "Stater Theme for init integration's projects by Louis Cauvet",
   "main": "index.js",
   "scripts": {
-    "build-webpack": "npx webpack --config webpack.config.js"
+    "webpack-build": "npx webpack --config webpack.config.js",
+    "webpack-watch": "npx webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -39,11 +40,6 @@
     "eslint": "^7.32.0",
     "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^5.6.0",
-    "image-minimizer-webpack-plugin": "^4.1.0",
-    "imagemin": "^9.0.0",
-    "imagemin-jpegtran": "^8.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^11.0.1",
     "mini-css-extract-plugin": "^2.9.1",
     "node-sass": "^9.0.0",
     "postcss-loader": "^8.1.1",

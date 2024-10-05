@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 // Customizable plugin
@@ -107,13 +106,6 @@ module.exports = {
                     },
                 ],
             },
-            {
-                test: /\.(png|jpe?g|webp|gif)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'img/[name][ext]',
-                },
-            }
         ]
     },
 
@@ -123,33 +115,35 @@ module.exports = {
             filename: 'css/[name].min.css',
         }),
         new SpriteLoaderPlugin(),
-        new ImageMinimizerPlugin({
-            minimizer: {
-                implementation: ImageMinimizerPlugin.imageminGenerate,
-                options: {
-                    plugins: [
-                        ['jpegtran', { progressive: true }],
-                        ['optipng', { optimizationLevel: 5 }],
-                        ['svgo', {
-                            plugins: [
-                                {
-                                    name: 'removeViewBox',
-                                    active: false
-                                },
-                            ],
-                        }],
-                    ],
-                },
-            },
-        }),
         new CopyWebpackPlugin({
             patterns: [
                 {
                     from: path.resolve(__dirname, './marmite-src/assets/img'),
                     to: 'img',
                 },
+                {
+                    from: path.resolve(__dirname, './marmite-src/assets/fonts'),
+                    to: 'fonts',
+                },
+                {
+                    from: path.resolve(__dirname, './marmite-src/assets/audios'),
+                    to: 'audios',
+                },
             ],
         }),
+        {
+            apply: (compiler) => {
+                compiler.hooks.watchRun.tap('WatchRun', (compilation) => {
+                    console.log('📂 A modification has been detected, recompilation in progress...');
+                });
+
+                compiler.hooks.done.tap('Done', (stats) => {
+                    setTimeout(() => {
+                        console.log(`✅ Recompilation terminée en ${stats.endTime - stats.startTime}ms`);
+                    }, 50);
+                });
+            }
+        }
     ],
 
     optimization: {
@@ -160,6 +154,17 @@ module.exports = {
                test:  /\.js(\?.*)?$/i
             }),
         ],
+    },
+
+    watch: true,
+
+    watchOptions: {
+        ignored: [
+            path.resolve(__dirname, 'node_modules'),
+            path.resolve(__dirname, 'marmite-dist'),
+        ],
+        aggregateTimeout: 300,
+        poll: 1000,
     },
 
     performance: {

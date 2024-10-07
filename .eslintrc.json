@@ -1,3 +1,6 @@
+/***************************************
+ * ESLINT'S CONFIGURATION FOR CHECKING THE JS SYNTAX DURING WEBPACK COMPILATION
+ **************************************/
 {
   "env": {
     "browser": true,

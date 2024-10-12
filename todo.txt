@@ -1,0 +1,19 @@
+- Déclinaison de boutons
+- Footer (avec cartes maps qui apparaissent depuis le bas)
+- Slider simple (1 slide à la fois)
+- Slider Triple
+- Accordéon
+- Colonnes multiples de contenu
+- bloc image-texte
+- Masonry grids
+- Grille de logos
+- Bloc témoignage
+- Editeur Wysiwyg
+- Tableau
+- Player video
+- Player podcast
+- Fenêtre modale
+- Formulaire
+- Listing de cartes (ex: actualités)
+- Grille avec système de filtrage côté Front
+- Système d'apparition lorsque rentre dans l'écran

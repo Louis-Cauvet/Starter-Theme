@@ -228,8 +228,13 @@ $inner-header-color : $color-white;
             color: $color-primary;
           }
 
+          a {
+            @media only screen and (max-width: $mq-4) {
+              display: block;
+            }
+          }
+
           .submenu-title {
-            display: block;
             color: $color-primary;
             font-weight: 700;
             transition: color .3s $default-transition-function;

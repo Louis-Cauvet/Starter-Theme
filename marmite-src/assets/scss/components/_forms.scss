@@ -4,6 +4,7 @@ form {
       border: none;
       border-bottom: .2rem solid $color-border;
       color: $color-text;
+      transition: border-bottom-color .3s $default-transition-function;
 
       &:focus {
         outline: none;

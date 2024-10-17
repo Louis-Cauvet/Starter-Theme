@@ -66,7 +66,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    MiniCssExtractPlugin.loader,             // Extracting the CSS in a separate file (for loading the CSS files in parallel of JS files)
+                    MiniCssExtractPlugin.loader,              // Extracting the CSS in a separate file (for loading the CSS files in parallel of JS files)
                     {
                         loader: 'css-loader',                // Allowing CSS to understand the 'imports' defined in SCSS
                         options: {

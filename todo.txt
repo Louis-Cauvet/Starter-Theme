@@ -10,6 +10,8 @@
 - Bloc témoignage
 - Editeur Wysiwyg
 - Tableau
+- Image parallaxe
+- Liste de définitions
 - Player video
 - Player podcast
 - Fenêtre modale

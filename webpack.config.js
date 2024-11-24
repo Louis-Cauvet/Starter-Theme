@@ -91,7 +91,8 @@ module.exports = {
                     {
                         loader: 'babel-loader',              // Converting modern JS in older browsers' compatible code
                         options: {
-                            presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]]       // Including necessaries polyfills in JS
+                            presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3 }]],       // Including necessaries polyfills in JS
+                            cacheDirectory: true                 // Adding cache for reduce file loading times
                         }
                     },
                 ]
@@ -160,6 +161,13 @@ module.exports = {
                test:  /\.js(\?.*)?$/i
             }),
         ],
+    },
+
+    cache: {
+        type: 'filesystem',              // Uses a cache based on the file system
+        buildDependencies: {
+            config: [__filename],
+        },
     },
 
     watch: true,                                                // Activating the Webpack's watch mode

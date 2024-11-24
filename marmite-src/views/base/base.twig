@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     {# SEO #}
     <title>{{ pageTitle }}</title>
-    <meta name="description" content="">
+    <meta name="description" content="Description représentative du site, afin d'améliorer le référencement par les moteurs d'indexations">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
     {# CSS FONTS #}
@@ -20,7 +20,7 @@
     {# CSS STYLES #}
     {% block stylesheet %}
         <link rel="stylesheet" href="{{ root }}assets/css/styles.min.css">
-        <link rel="stylesheet" href="{{ root }}assets/css/styles.min.css" media="print">
+        <link rel="stylesheet" href="{{ root }}assets/css/print.min.css" media="print">
     {% endblock %}
 
     {# FAVICONS #}
@@ -42,7 +42,7 @@
     {% endblock %}
 
     <main role="main" class="main-content">
-            {% block mainContent "" %}
+        {% block mainContent "" %}
     </main>
 
     {% block footer %}

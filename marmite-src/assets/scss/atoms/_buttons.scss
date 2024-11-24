@@ -1,6 +1,7 @@
 /* ====================== */
 /* BUTTONS
 /* ====================== */
+@use "../settings/1ndex" as settings;
 
 .a-button {
   position: relative;
@@ -12,22 +13,22 @@
   font-weight: 400;
   text-decoration: none;
   text-align: center;
-  background-color: $color-primary;
-  color: $color-white;
+  background-color: settings.$color-primary;
+  color: settings.$color-white;
   border: none;
   overflow: hidden;
   cursor: pointer;
-  transition: background-color .25s $default-transition-function;
+  transition: background-color .25s settings.$default-transition-function;
 
   &:hover {
-    background-color: $color-dark-primary;
+    background-color: settings.$color-dark-primary;
   }
 
   &.h-bg-secondary {
-    background-color: $color-secondary;
+    background-color: settings.$color-secondary;
 
     &:hover {
-      background-color: $color-dark-secondary;
+      background-color: settings.$color-dark-secondary;
     }
   }
 }

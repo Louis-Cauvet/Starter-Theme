@@ -1,3 +1,8 @@
+/* ====================== */
+/* BANNERS
+/* ====================== */
+@use "../settings/1ndex" as settings;
+
 .hero-banner {
   position: relative;
   display: flex;
@@ -7,23 +12,18 @@
   gap: 2.5rem;
   padding: 6rem 15rem 9rem;
   width: 100%;
-  min-height: 42.5rem;
+  min-height: 35rem;
 
-  @media only screen and (max-width: $mq-4) {
-    padding: 4.5rem 2rem 9rem;
-    min-height: 30rem;
+  @media only screen and (max-width: settings.$mq-4) {
+    padding: 4.5rem 2rem 6rem;
+    min-height: 25rem;
   }
 
-  .a-title-1,
-  p {
+  *:not(.as--bg-img) {
     z-index: 1;
   }
 
-
-  .contact-button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 2rem;
+  .a-title-1 {
+    text-wrap: balance;
   }
 }

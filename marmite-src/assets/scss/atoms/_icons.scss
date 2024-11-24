@@ -2,6 +2,8 @@
 /* SVG ICONS
 /* ====================== */
 @use "sass:math";
+@use "sass:list";
+@use "../settings/1ndex" as settings;
 
 @mixin icon-size($icon-size) {
   width: math.div(1rem * $icon-size, 10);
@@ -17,7 +19,7 @@
   width: 2rem;
   height: 2rem;
   box-sizing: content-box;      // Allowed padding inside icons
-  transition: all .2s $default-transition-function;
+  transition: all .2s settings.$default-transition-function;
 
   svg {
     display:block;
@@ -28,7 +30,7 @@
 }
 
 
-@each $colorname, $color in $a-colors {
+@each $colorname, $color in settings.$a-colors {
   .a-icon.as--#{"#{$colorname}"} {                           // class for changing icon's color
     @include svg-color($color);
   }
@@ -36,8 +38,8 @@
 
 
 $a-icon-sizes: 10,12,15,20,25,30,35,40,45,50,80;
-@for $i from 1 through length($a-icon-sizes) {
-  $icon-size: nth($a-icon-sizes, $i);
+@for $i from 1 through list.length($a-icon-sizes) {
+  $icon-size: list.nth($a-icon-sizes, $i);
   .a-icon.as--#{"#{$icon-size}"} {                             // class for changing icon's size
     @include icon-size($icon-size);
   }

@@ -4,41 +4,25 @@
 
 /* Reset
    ========================================================================== */
-@import "reset";
+@use "reset";
 
 
 /* Settings
    ========================================================================== */
-@import
-"settings/colors",
-"settings/fonts",
-"settings/mediaqueries",
-"settings/transitions",
-"settings/helpers"
-;
+@use "settings/1ndex" as settings;
 
 
 /* Atoms
    ========================================================================== */
-@import
-"atoms/buttons",
-"atoms/headings",
-"atoms/icons",
-"atoms/images"
-;
+@use "atoms/1ndex" as atoms;
+
 
 
 /* Global
    ========================================================================== */
-@import
-"global/base",
-"global/header"
-;
+@use "global/1ndex" as global;
 
 
 /* Components
    ========================================================================== */
-@import
-"components/banners",
-"components/forms"
-;
+@use "components/1ndex" as components;

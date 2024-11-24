@@ -1,15 +1,18 @@
+/* ====================== */
+/* FORMS
+/* ====================== */
+@use "../settings/1ndex" as settings;
+
 form {
   input {
-    &[type="search"] {
-      border: none;
-      border-bottom: .2rem solid $color-border;
-      color: $color-text;
-      transition: border-bottom-color .3s $default-transition-function;
+    color: settings.$color-text;
+    border: none;
+    border-bottom: .2rem solid settings.$color-text;
+    transition: border-bottom-color .3s settings.$default-transition-function;
 
-      &:focus {
-        outline: none;
-        border-bottom-color: $color-dark-primary;
-      }
+    &:focus {
+      outline: none;
+      border-bottom-color: settings.$color-dark-primary;
     }
   }
 }

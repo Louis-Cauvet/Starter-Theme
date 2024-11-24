@@ -1,11 +1,14 @@
 /* ====================== */
 /* HELPERS
 /* ====================== */
+@use "colors";
+@use "mediaqueries";
+
 
 /* ====================== */
 /* Colors - Background colors
 /* ====================== */
-@each $colorname, $color in $a-colors {
+@each $colorname, $color in colors.$a-colors {
   .h-color-#{"#{$colorname}"} {
     color: $color;
   }
@@ -27,7 +30,6 @@ $a-font-sizes: 1.5 2;
   }
 }
 
-
 $a-font-weights: 300 400 500 600 700;
 
 @each $current-font-weight in $a-font-weights {
@@ -35,7 +37,6 @@ $a-font-weights: 300 400 500 600 700;
     font-weight: $current-font-weight;
   }
 }
-
 
 .h-fs-normal {font-style: normal}
 .h-fs-italic {font-style: italic}
@@ -80,7 +81,7 @@ $a-spacings: 0 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 6 7 8 10 15 20;
 /* Mobile's format transition
 /* ====================== */
 .h-hide-mobile {
-  @media only screen and (max-width: $mq-4) {
+  @media only screen and (max-width: mediaqueries.$mq-4) {
     display: none !important;
   }
 }
@@ -88,7 +89,7 @@ $a-spacings: 0 0.5 1 1.5 2 2.5 3 3.5 4 4.5 5 6 7 8 10 15 20;
 .h-show-mobile {
   display: none; 
 
-  @media only screen and (max-width: $mq-4) {
+  @media only screen and (max-width: mediaqueries.$mq-4) {
     display: block;
   }
 }

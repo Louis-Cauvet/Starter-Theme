@@ -1,29 +1,11 @@
+/* ====================== */
+/* IMAGES
+/* ====================== */
+@use "../settings/1ndex" as settings;
+
 .editor-img {
   position: relative;
-}
-
-.bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.editor-img,
-.bg-img {
-  &.as--overlay {
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $color-overlay;
-      opacity: .35;
-    }
-  }
+  overflow: hidden;
 
   picture,
   img {
@@ -35,5 +17,32 @@
   img {
     object-fit: cover;
     object-position: center;
+  }
+
+  &.as--bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.as--conserved-ratio {
+    img {
+      height: auto;
+    }
+  }
+
+  &.as--overlay {
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: settings.$color-overlay;
+      opacity: .35;
+    }
   }
 }

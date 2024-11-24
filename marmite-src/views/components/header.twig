@@ -1,21 +1,21 @@
 <header class="inner-header" role="banner">
-    <a href="#_" class="editor-img logo" title="Retour à la page d'accueil" tabindex="1">
+    <a href="#_" class="editor-img logo" title="Retour à la page d'accueil">
         <img src="../assets/img/logos/logo.png" alt="logo">
     </a>
 
-    <nav class="nav-menu" role="navigation" aria-label="Menu principal" aria-expanded="false">
-        <ul class="hidden-navbar">
+    <nav class="nav-menu" role="navigation">
+        <ul class="as--hidden-navbar">
             <li class="nav-item">
                 <a href="#_" class="nav-item-name">
                     Lien 1 (sous-menu avec lien)
                     {{ macros.svg('arrow-down','20','as--black h-show-mobile') }}
                 </a>
-                <div class="nav-submenu" aria-expanded="false">
-                    <button class="close-submenu h-show-mobile">
+                <div class="nav-submenu">
+                    <button class="close-submenu h-show-mobile" tabindex="-1">
                         {{ macros.svg('arrow-left','12','as--text') }}
                         Retour
                     </button>
-                    <ul class="hidden-navbar">
+                    <ul class="as--hidden-navbar">
                         <li class="h-show-mobile">
                             <a href="#_" class="submenu-title">Lien 1 (sous-menu avec lien)</a>
                         </li>
@@ -32,16 +32,16 @@
                 </div>
             </li>
             <li class="nav-item">
-                <button class="nav-item-name">
+                <button class="nav-item-name" tabindex="-1">
                     Lien 2 (sous-menu sans lien)
                     {{ macros.svg('arrow-down','20','as--text h-show-mobile') }}
                 </button>
-                <div class="nav-submenu" aria-expanded="false">
-                    <button class="close-submenu h-show-mobile">
+                <div class="nav-submenu">
+                    <button class="close-submenu h-show-mobile" tabindex="-1">
                         {{ macros.svg('arrow-left','12','as--text') }}
                         Retour
                     </button>
-                    <ul class="hidden-navbar">
+                    <ul class="as--hidden-navbar">
                         <li class="h-show-mobile">
                             <span class="submenu-title"> Lien 2 (sous-menu sans lien)</span>
                         </li>
@@ -66,29 +66,30 @@
     <div class="user-actions">
         <button class="open-searchbar">
             {{ macros.svg('search','25','as--text') }}
-            <span class="screen-reader-only">Ouvrir le moteur de recherche interne</span>
-        </button>
-        <button class="close-searchbar as--hidden">
-            {{ macros.svg('close','25','as--text') }}
-            <span class="screen-reader-only">Fermer le moteur de recherche interne</span>
+            <span class="sr-only">Ouvrir le moteur de recherche interne</span>
         </button>
 
-        <button class="open-mobile-menu h-show-mobile" tabindex="1" aria-controls="mobile-menu">
+        <button class="open-mobile-menu h-show-mobile" tabindex="-1">
             {{ macros.svg('burger','35','as--text') }}
-            <span class="screen-reader-only">Ouvrir le menu mobile</span>
+            <span class="sr-only">Ouvrir le menu mobile</span>
         </button>
-        <button class="close-mobile-menu h-show-mobile as--hidden" tabindex="1">
+        <button class="close-mobile-menu h-show-mobile is-hidden" tabindex="-1">
             {{ macros.svg('close','25','as--text') }}
-            <span class="screen-reader-only">Fermer le menu mobile</span>
+            <span class="sr-only">Fermer le menu mobile</span>
         </button>
-    </div>
-
-    <div class="searchbar" aria-expanded="false">
-        <form action="" method="POST">
-            <input type="search" id="search-terms" placeholder="Mots clés" aria-label="Rechercher des contenus sur le site" tabindex="-1">
-            <button type="submit" class="a-button" tabindex="-1">Rechercher</button>
-        </form>
     </div>
 
     <span class="nav-indicator"></span>
 </header>
+
+
+<search class="searchbar">
+    <button class="close-searchbar" tabindex="-1">
+        {{ macros.svg('close','25','as--text') }}
+        <span class="sr-only">Fermer le moteur de recherche interne</span>
+    </button>
+    <form action="" method="POST" class="inline-form">
+        <input type="search" id="search-terms" placeholder="Mots clés" tabindex="-1">
+        <button type="submit" class="a-button" tabindex="-1">Rechercher</button>
+    </form>
+</search>

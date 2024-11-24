@@ -82,38 +82,28 @@ function manageMenuNavigationSystem() {
     if ($currentScreenWidth > 896) {
         // Desktop & horizontal tablet formats
         $('.nav-item-name').on('mouseenter focus', function () {
-            $('.nav-submenu').removeClass('is-open').attr('aria-expanded', 'false');
-            $(this).siblings('.nav-submenu').addClass('is-open').attr('aria-expanded', 'true');
+            $('.nav-submenu').removeClass('is-open');
+            $(this).siblings('.nav-submenu').addClass('is-open');
             changeNavIndicatorTarget($(this));
         });
-        $('.nav-submenu a').on('focus', function () {
-            $('.nav-submenu').removeClass('is-open').attr('aria-expanded', 'false');
-            $(this).closest('.nav-submenu').addClass('is-open').attr('aria-expanded', 'true');
+        $('.nav-submenu *').on('focus', function () {
             const $navItemParent = $(this).closest('.nav-submenu').siblings('.nav-item-name');
             changeNavIndicatorTarget($navItemParent);
         });
-        $('.inner-header').on('mouseleave', function () {
-            $('.nav-submenu').removeClass('is-open').attr('aria-expanded', 'false');
-            resetNavIndicator();
-        });
-        $('.logo, .user-actions').on('mouseenter focus', function () {
-            $('.nav-submenu').removeClass('is-open').attr('aria-expanded', 'false');
+        $('.inner-header').on('mouseleave focusout', function () {
+            $('.nav-submenu').removeClass('is-open');
             resetNavIndicator();
         });
     } else {
-        // Mobile & vertical tablet formats
-        addNegativeTabindex($('.nav-menu a, .nav-menu button'));
-
+        // // Mobile & vertical tablet formats
         $('.nav-item .nav-item-name').on('click', function(e) {
             if ($(this).siblings('.nav-submenu').length > 0) {
                 e.preventDefault();
-                $(this).siblings('.nav-submenu').addClass('is-open').attr('aria-expanded', 'true');
-                removeTabindex($(this).siblings('.nav-submenu').find('a, button'));
+                $(this).siblings('.nav-submenu').addClass('is-open');
             }
         });
         $('.close-submenu').on('click', function() {
-            $(this).parent('.nav-submenu').removeClass('is-open').attr('aria-expanded', 'false');
-            addNegativeTabindex($(this).parent('.nav-submenu').find('a, button'));
+            $(this).parent('.nav-submenu').removeClass('is-open');
         });
     }
 }
@@ -179,33 +169,34 @@ const app = {
             self.onScroll();
         });
 
+        const $focusablesElements = $('a, button, input, textarea, select, details')
+
 
         // Open/close mobile menu
         $('.open-mobile-menu').on('click', function () {
-            $('.nav-menu').addClass('is-open').attr('aria-expanded', 'true');
+            $('.nav-menu').addClass('is-open');
             removeTabindex($('.nav-menu>ul>li>a, .nav-menu>ul>li>button'));
-            $(this).addClass('as--hidden');
-            $('.close-mobile-menu').removeClass('as--hidden');
+            $(this).addClass('is-hidden');
+            $('.close-mobile-menu').removeClass('is-hidden');
         });
         $('.close-mobile-menu').on('click', function () {
-            $('.nav-menu').removeClass('is-open').attr('aria-expanded', 'false');
+            $('.nav-menu').removeClass('is-open');
             addNegativeTabindex($('.nav-menu>ul>li>a, .nav-menu>ul>li>button'));
-            $(this).addClass('as--hidden');
-            $('.open-mobile-menu').removeClass('as--hidden');
+            $(this).addClass('is-hidden');
+            $('.open-mobile-menu').removeClass('is-hidden');
         });
+
 
         // Open/close searchbar
         $('.open-searchbar').on('click', function () {
-            $('.searchbar').addClass('is-open').attr('aria-expanded', 'true');
+            $('.searchbar').addClass('is-open');
+            addNegativeTabindex($focusablesElements.not('.searchbar *'));
             removeTabindex($('.searchbar *'));
-            $(this).addClass('as--hidden');
-            $('.close-searchbar').removeClass('as--hidden');
         });
         $('.close-searchbar').on('click', function () {
-            $('.searchbar').removeClass('is-open').attr('aria-expanded', 'false');
-            addNegativeTabindex( $('.searchbar input, .searchbar button'));
-            $(this).addClass('as--hidden');
-            $('.open-searchbar').removeClass('as--hidden');
+            $('.searchbar').removeClass('is-open');
+            addNegativeTabindex($('.searchbar *'));
+            removeTabindex($focusablesElements.not('.searchbar *'));
         });
     }
 };

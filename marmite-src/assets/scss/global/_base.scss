@@ -1,14 +1,15 @@
 /* ====================== */
 /* BASE STYLES
 /* ====================== */
+@use "../settings/1ndex" as settings;
 
 // Personnalize style when a element is selected by the user
-::-moz-selection{ background: $color-primary; color: $color-white; text-shadow: none; }
-::selection { background: $color-primary; color: $color-white; text-shadow: none; }
+::-moz-selection{ background: settings.$color-primary; color: settings.$color-white; text-shadow: none; }
+::selection { background: settings.$color-primary; color: settings.$color-white; text-shadow: none; }
 
 // Personnalize style when a element is focused during keyboard's navigation
 *:focus-visible {
-  outline: 3px solid red;
+  outline: 3px solid settings.$color-black;
   outline-offset: 3px;
 }
 
@@ -20,15 +21,16 @@
 
 html {
   font-size: .625em;            // .1rem = 1px, 1rem = 10px, 10rem = 100px....
-  background-color: $color-bg;
+  background-color: settings.$color-background;
 }
 
 body {
   margin: 0 auto;
-  font-family: $font-primary;
+  font-family: settings.$font-primary;
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: normal;
   font-weight: 400;
+  color: settings.$color-text;
   max-width: 272.5rem;                       // Over '4K' size
   -webkit-font-smoothing: antialiased;       // Remove the effect of pixelated edges on font's characters
 }
@@ -43,16 +45,20 @@ body {
   box-sizing: border-box;
 }
 
-ul, li {
-  margin: 0; padding: 0;
+ul,
+li {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }
 
@@ -66,7 +72,7 @@ button {
   border: none;
 }
 
-.screen-reader-only {           // Maximum level of hide for an element, in goal to make it reacheable only by screen readers
+.sr-only {           // Maximum level of hide for an element, in goal to make it reacheable only by screen readers
   position: absolute;
   width: 1px;
   height: 1px;
@@ -77,7 +83,7 @@ button {
   border: 0;
 }
 
-.hidden-navbar {
+.as--hidden-navbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 

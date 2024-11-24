@@ -3,19 +3,19 @@
 /* ====================== */
 
 $color-primary: #0cb282;
-$color-secondary: #e8910f;
+$color-secondary: #164c91;
 
 $color-dark-primary: #087555;
-$color-dark-secondary: #a87307;
-
-$color-black: #000;
-$color-white: #fff;
+$color-dark-secondary: #0d3d77;
 
 $color-text: #2A2A2A;
-$color-bg: #EFEFEF;
+$color-background: #DFDFDF;
 $color-border: rgba(#75726f, .3);
 
 $color-overlay : #161131;
+
+$color-black: #000;
+$color-white: #fff;
 
 $color-info: #5aaafa;
 $color-success: #5aa700;
@@ -29,5 +29,5 @@ $a-colors: (
   black: $color-black,
   white: $color-white,
   text: $color-text,
-  bg: $color-bg
+  background: $color-background
 );

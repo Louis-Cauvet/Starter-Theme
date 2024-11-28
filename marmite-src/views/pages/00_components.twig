@@ -6,22 +6,96 @@
 {%- block mainContent %}
     {% include "../components/banner.twig" %}
 
-{#    <div class="inner-wrap">#}
-{#        <h2 class="a-title-1">Components</h2>#}
+    <div class="inner-wrap">
+        <br>
+        <br>
 
-{#        <div class="editor-wysiwyg">#}
-{#            <h3>Base icons</h3>#}
-{#            {% set aIcons = [#}
-{#                "arrow-down",#}
-{#                "arrow-left",#}
-{#                "burger",#}
-{#                "close",#}
-{#                "search",#}
-{#            ] %}#}
-{#            {% for iconName in aIcons %}#}
-{#                {{ macros.svg(iconName,'25','as--secondary') }}#}
-{#            {% endfor %}#}
-{#        </div>#}
+        <h2 class="a-title-1">Niveau de titre 1 (a-title-1)</h2>
+        <h2 class="a-title-2">Niveau de titre 2 (a-title-2)</h2>
+        <h2 class="a-title-3">Niveau de titre 3 (a-title-3)</h2>
+        <h2 class="a-title-4">Niveau de titre 4 (a-title-4)</h2>
+
+        <br>
+        <br>
+
+        <p class="a-title-1 as--underline-hover">Texte de plusieurs lignes qui est soulignée progressivement
+            lors du survol de la souris
+        </p>
+
+        <br>
+        <br>
+
+        <p>Texte à la base classique qui devient <i>italique</i> , <b>gras</b> , <s>souligné</s> , <sup>mis à la puissance</sup> , <sub> mis à l'exposant </sub>avant de terminer.</p>
+
+        <br>
+        <br>
+
+        <h2 class="a-title-2 h-mb-10">Base icons</h2>
+        {% set aIcons = [
+            "arrow-down",
+            "arrow-left",
+            "burger",
+            "close",
+            "search",
+        ] %}
+        {% for iconName in aIcons %}
+            {{ macros.svg(iconName,'25','as--secondary') }}
+        {% endfor %}
+
+        <br>
+        <br>
+
+
+        <h2 class="a-title-2 h-mb-10">Buttons</h2>
+        {{ macros.btnButton('Bouton classique','') }}
+        {{ macros.btnButton('Bouton alternatif','as--secondary') }}
+        {{ macros.btnButton('Bouton blanc','as--white') }}
+        {{ macros.btnButton('Bouton transparent','as--ghost') }}
+        {{ macros.btnButton('','as--icon-only', 'arrow-down', '25', 'Passer à la slide suivante') }}
+        {{ macros.btnButton('','as--icon-only as--secondary', 'arrow-down', '20', 'Passer à la slide suivante') }}
+        {{ macros.btnButton('','as--icon-only as--white', 'arrow-down', '15', 'Passer à la slide suivante') }}
+        {{ macros.btnButton('','as--icon-only as--ghost', 'arrow-down', '12', 'Passer à la slide suivante') }}
+        {{ macros.btnButton('Texte et icône','', 'arrow-down', '15') }}
+        {{ macros.btnButton('Texte et icône','as--icon-right', 'arrow-down', '15') }}
+        {{ macros.btnButton('Texte et icône','as--icon-top', 'arrow-down', '15') }}
+        {{ macros.btnButton('Texte et icône','as--icon-bottom', 'arrow-down', '15') }}
+        <button class="a-button" data-text-hover="CIC">Cas d'études</button>
+
+        <br>
+        <br>
+
+        <h2 class="a-title-2 h-mb-10">Liens</h2>
+        {{ macros.btnLink('Bouton classique','', '#_') }}
+        {{ macros.btnLink('Bouton alternatif','as--secondary', '#_') }}
+        {{ macros.btnLink('Bouton blanc','as--white', '#_') }}
+        {{ macros.btnLink('Bouton transparent','as--ghost', '#_') }}
+        {{ macros.btnLink('','as--icon-only', '#_', 'arrow-down', '25', 'Passer à la slide suivante') }}
+        {{ macros.btnLink('','as--icon-only as--secondary', '#_', 'arrow-down', '20', 'Passer à la slide suivante') }}
+        {{ macros.btnLink('','as--icon-only as--white', '#_', 'arrow-down', '15', 'Passer à la slide suivante') }}
+        {{ macros.btnLink('','as--icon-only as--ghost', '#_', 'arrow-down', '12', 'Passer à la slide suivante') }}
+        {{ macros.btnLink('Texte et icône','', '#_','arrow-down', '15') }}
+        {{ macros.btnLink('Texte et icône','as--icon-right', '#_', 'arrow-down', '15') }}
+        {{ macros.btnLink('Texte et icône','as--icon-top', '#_', 'arrow-down', '15') }}
+        {{ macros.btnLink('Texte et icône','as--icon-bottom', '#_', 'arrow-down', '15') }}
+        <a href="#_" class="a-button" data-text-hover="CIC">Cas d'études</a>
+
+        <br>
+        <br>
+
+        <h2 class="a-title-2 h-mb-10">Spans</h2>
+        {{ macros.btnSpan('Bouton classique','') }}
+        {{ macros.btnSpan('Bouton alternatif','as--secondary') }}
+        {{ macros.btnSpan('Bouton blanc','as--white') }}
+        {{ macros.btnSpan('Bouton transparent','as--ghost') }}
+        {{ macros.btnSpan('','as--icon-only', 'arrow-down', '25') }}
+        {{ macros.btnSpan('','as--icon-only as--secondary', 'arrow-down', '20') }}
+        {{ macros.btnSpan('','as--icon-only as--white', 'arrow-down', '15') }}
+        {{ macros.btnSpan('','as--icon-only as--ghost', 'arrow-down', '12') }}
+        {{ macros.btnSpan('Texte et icône','', 'arrow-down', '15') }}
+        {{ macros.btnSpan('Texte et icône','as--icon-right', 'arrow-down', '15') }}
+        {{ macros.btnSpan('Texte et icône','as--icon-top', 'arrow-down', '15') }}
+        {{ macros.btnSpan('Texte et icône','as--icon-bottom', 'arrow-down', '15') }}
+        <span class="a-button" data-text-hover="CIC">Cas d'études</span>
 
 {#        <div class="editor-wysiwyg">#}
 {#            <h3>Plain Buttons</h3>#}
@@ -222,7 +296,7 @@
 {#        <br>#}
 {#        <br>#}
 {#        <br>#}
-{#    </div>#}
+</div>
 {% endblock mainContent -%}
 
 

@@ -94,6 +94,7 @@ function manageMenuNavigationSystem() {
             $('.nav-submenu').removeClass('is-open');
             resetNavIndicator();
         });
+        removeTabindex($('.nav-item:has(.nav-submenu)>a.nav-item-name'));
     } else {
         // // Mobile & vertical tablet formats
         $('.nav-item .nav-item-name').on('click', function(e) {
@@ -105,6 +106,7 @@ function manageMenuNavigationSystem() {
         $('.close-submenu').on('click', function() {
             $(this).parent('.nav-submenu').removeClass('is-open');
         });
+        addNegativeTabindex($('.nav-item:has(.nav-submenu)>a.nav-item-name'));
     }
 }
 
@@ -189,7 +191,8 @@ const app = {
 
         // Open/close searchbar
         $('.open-searchbar').on('click', function () {
-            $('.searchbar').addClass('is-open');
+            $('.searchbar').addClass('is-open has--overlay');
+            $('.searchbar:before').css('height', '100svh');
             addNegativeTabindex($focusablesElements.not('.searchbar *'));
             removeTabindex($('.searchbar *'));
         });
@@ -197,6 +200,9 @@ const app = {
             $('.searchbar').removeClass('is-open');
             addNegativeTabindex($('.searchbar *'));
             removeTabindex($focusablesElements.not('.searchbar *'));
+            setTimeout(function (){
+                $('.searchbar').removeClass('has--overlay');
+            }, 500)
         });
     }
 };

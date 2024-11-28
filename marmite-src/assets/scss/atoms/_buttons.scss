@@ -8,6 +8,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 1.4rem;
   padding: 1rem 1.5rem;
   line-height: 1.2;
   font-weight: 400;
@@ -15,20 +16,90 @@
   text-align: center;
   background-color: settings.$color-primary;
   color: settings.$color-white;
-  border: none;
+  border: .2rem solid settings.$color-primary;
   overflow: hidden;
   cursor: pointer;
-  transition: background-color .25s settings.$default-transition-function;
+  transition: background-color .25s settings.$default-transition-function, border-color .25s settings.$default-transition-function;
 
   &:hover {
     background-color: settings.$color-dark-primary;
+    border-color: settings.$color-dark-primary;
   }
 
-  &.h-bg-secondary {
+  &.as--secondary {
     background-color: settings.$color-secondary;
+    border-color: settings.$color-secondary;
 
     &:hover {
       background-color: settings.$color-dark-secondary;
+      border-color: settings.$color-dark-secondary;
     }
   }
+
+  &.as--white {
+    color: settings.$color-text;
+    background-color: settings.$color-white;
+    border-color: settings.$color-white;
+
+    &:hover {
+      background-color: transparent;
+      border-color: settings.$color-border;
+    }
+  }
+
+  &.as--ghost {
+    color: settings.$color-text;
+    background-color: transparent;
+    border-color: settings.$color-border;
+
+    &:hover {
+      background-color: settings.$color-white;
+      border-color: settings.$color-white;
+    }
+  }
+
+  &.as--icon-only {
+    padding: 1rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  &.as--icon-right {
+    flex-direction: row-reverse;
+  }
+
+  &.as--icon-top {
+    flex-direction: column;
+  }
+
+  &.as--icon-bottom {
+    flex-direction: column-reverse;
+  }
+
+  &[data-text-hover] {
+    transition: padding-bottom .5s settings.$default-transition-function;
+
+    &:after {
+      content: attr(data-text-hover);
+      position: absolute;
+      left: 50%;
+      bottom: -3rem;
+      translate: -50% 0;
+      opacity: 0;
+      transition: .5s settings.$default-transition-function;
+    }
+
+    &:hover {
+      padding-bottom: 4rem;
+
+      &:after {
+        bottom: 1rem;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+span.a-button {
+  pointer-events: none;
 }

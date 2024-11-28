@@ -1,5 +1,19 @@
 /* ====================== */
 /* TRANSITIONS VARIABLES
 /* ====================== */
+@use "colors";
 
 $default-transition-function: cubic-bezier(1,.37,.41,.8);
+
+.as--underline-hover {
+  display: inline !important;
+  background-image: linear-gradient(colors.$color-primary, colors.$color-primary);
+  background-size: 0 .4rem;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size .5s $default-transition-function;
+
+  &:hover {
+    background-size: 100% .4rem;
+  }
+}

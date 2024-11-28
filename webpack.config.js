@@ -121,7 +121,9 @@ module.exports = {
         new ESLintPlugin({                              // Analizing Js syntax for write warnings
             emitWarning: true,                                 // Writing warning in the terminal
         }),
-        new SpriteLoaderPlugin(),                              // Extracting all SVG in the same sprite
+        new SpriteLoaderPlugin({
+            plainSprite: true,
+        }),                              // Extracting all SVG in the same sprite
         new CopyWebpackPlugin({
             patterns: [
                 {

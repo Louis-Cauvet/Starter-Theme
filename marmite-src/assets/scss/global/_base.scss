@@ -31,7 +31,7 @@ body {
   line-height: normal;
   font-weight: 400;
   color: settings.$color-text;
-  max-width: 272.5rem;                       // Over '4K' size
+  max-width: 258rem;                       // Over '4K' size
   -webkit-font-smoothing: antialiased;       // Remove the effect of pixelated edges on font's characters
 }
 
@@ -70,6 +70,12 @@ a {
 button {
   background: transparent;
   border: none;
+}
+
+.inner-wrap {
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-width: 172rem;
 }
 
 .sr-only {           // Maximum level of hide for an element, in goal to make it reacheable only by screen readers

@@ -3,15 +3,53 @@
 /* ====================== */
 @use "../settings/1ndex" as settings;
 
-.a-title-1 {
+@mixin base-title {
+  display: block;
   font-family: settings.$font-primary;
-  font-size: 6rem;
-  line-height: 1.1;
-  font-weight: 700;
-  text-align: center;
   text-decoration: none;
+}
+
+@mixin title-level-1 {
+  font-size: 6rem;
+  font-weight: 500;
 
   @media only screen and (max-width: settings.$mq-4) {
     font-size: 3.5rem;
   }
+}
+
+@mixin title-level-2 {
+  font-size: clamp(1.75rem, 1.4167rem + 1.4815vw, 2.25rem);   // From 36px in larger screens to 28px in smaller screens
+  font-weight: 500;
+}
+
+@mixin title-level-3 {
+  font-size: clamp(2.2rem, 1.125rem + 1.1111vw, 2.8rem);  // From 28px in larger screens to 22px in smaller screens
+  font-weight: 500;
+}
+
+@mixin title-level-4 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.a-title-1 {
+  @include base-title;
+  @include title-level-1;
+}
+
+.a-title-2 {
+  @include base-title;
+  @include title-level-2;
+}
+
+.a-title-3 {
+  @include base-title;
+  @include title-level-3;
+}
+
+.a-title-4 {
+  @include base-title;
+  @include title-level-4;
 }

@@ -8,7 +8,6 @@ form {
     color: settings.$color-text;
     border: none;
     border-bottom: .2rem solid settings.$color-text;
-    transition: border-bottom-color .3s settings.$default-transition-function;
 
     &:focus {
       outline: none;

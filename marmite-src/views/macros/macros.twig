@@ -7,20 +7,31 @@
 
 
 {# Links .a-button #}
-{% macro btnLink(content, class, link, iconName, iconSize, iconPosition, attributes) %}
+{% macro btnLink(content, class, link, iconName, iconSize, alternativeText, attributes) %}
     {% from _self import svg %}
     <a href="{{ link }}" title="{{ content }}" class="a-button{% if class %} {{ class }}{% endif %}{% if iconPosition %} as--{{ iconPosition }}{% endif %}"{% for attr, value in attributes %} {{ attr }}="{{ value }}"{% endfor %}>
     {% if iconName %}{{ svg(iconName, iconSize) }}{% endif %}
     {% if content %}{{ content }}{% endif %}
+    {% if alternativeText %}<span class="sr-only">{{ alternativeText }}</span>{% endif %}
     </a>
 {% endmacro %}
 
 
 {# Buttons .a-button #}
-{% macro btnButton(content, class, iconName, iconSize, iconPosition, attributes) %}
+{% macro btnButton(content, class, iconName, iconSize, alternativeText, attributes) %}
     {% from _self import svg %}
     <button class="a-button{% if class %} {{ class }}{% endif %}{% if iconPosition %} as--{{ iconPosition }}{% endif %}"{% for attr, value in attributes %} {{ attr }}="{{ value }}"{% endfor %}>
     {% if iconName %}{{ svg(iconName, iconSize) }}{% endif %}
     {% if content %}{{ content }}{% endif %}
+    {% if alternativeText %}<span class="sr-only">{{ alternativeText }}</span>{% endif %}
     </button>
+{% endmacro %}
+
+{# Buttons .a-button #}
+{% macro btnSpan(content, class, iconName, iconSize, attributes) %}
+    {% from _self import svg %}
+    <span class="a-button{% if class %} {{ class }}{% endif %}{% if iconPosition %} as--{{ iconPosition }}{% endif %}"{% for attr, value in attributes %} {{ attr }}="{{ value }}"{% endfor %}>
+    {% if iconName %}{{ svg(iconName, iconSize) }}{% endif %}
+    {% if content %}{{ content }}{% endif %}
+    </span>
 {% endmacro %}

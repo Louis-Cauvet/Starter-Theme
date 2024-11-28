@@ -200,7 +200,7 @@ $inner-header-color : settings.$color-white;
       }
 
       &.is-open,
-      &:focus-within {
+      &:has(*:focus-visible) {
         translate: 0 0;
       }
 

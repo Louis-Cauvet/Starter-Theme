@@ -27,7 +27,7 @@
     height: 0;
     background-color: settings.$color-overlay;
     opacity: 0;
-    transition: .5s settings.$default-transition-function;
+    transition: opacity .5s settings.$default-transition-function;
   }
 
   .inline-form {
@@ -36,9 +36,18 @@
     width: 100%;
     max-width: 60rem;
 
+    @media only screen and (max-width: settings.$mq-2) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     input {
       flex-grow: 2;
       background-color: transparent;
+
+      @media only screen and (max-width: settings.$mq-2) {
+        width: 100%;
+      }
 
       &:focus {
         border-bottom-color: settings.$color-primary;
@@ -50,8 +59,13 @@
     translate: 0 0;
 
     &:before {
-      height: 100svh;
       opacity: .6;
+    }
+  }
+
+  &.has--overlay {
+    &:before {
+      height: 100svh;
     }
   }
 }

@@ -29,6 +29,7 @@
 
         <br>
         <br>
+        <br>
 
         <h2 class="a-title-2 h-mb-10">Base icons</h2>
         {% set aIcons = [
@@ -42,6 +43,7 @@
             {{ macros.svg(iconName,'25','as--secondary') }}
         {% endfor %}
 
+        <br>
         <br>
         <br>
 
@@ -60,7 +62,9 @@
         {{ macros.btnButton('Texte et icône','as--icon-top', 'arrow-down', '15') }}
         {{ macros.btnButton('Texte et icône','as--icon-bottom', 'arrow-down', '15') }}
         <button class="a-button" data-text-hover="CIC">Cas d'études</button>
+        {{ macros.btnButton('Bouton Désactivé','','','','',{'disabled': ''}) }}
 
+        <br>
         <br>
         <br>
 
@@ -79,6 +83,7 @@
         {{ macros.btnLink('Texte et icône','as--icon-bottom', '#_', 'arrow-down', '15') }}
         <a href="#_" class="a-button" data-text-hover="CIC">Cas d'études</a>
 
+        <br>
         <br>
         <br>
 

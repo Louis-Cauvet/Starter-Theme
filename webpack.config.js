@@ -165,12 +165,12 @@ module.exports = {
         ],
     },
 
-    cache: {
-        type: 'filesystem',              // Uses a cache based on the file system
-        buildDependencies: {
-            config: [__filename],
-        },
-    },
+    // cache: {
+    //     type: 'filesystem',              // Uses a cache based on the file system
+    //     buildDependencies: {
+    //         config: [__filename],
+    //     },
+    // },
 
     watch: true,                                                // Activating the Webpack's watch mode
 

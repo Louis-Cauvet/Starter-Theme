@@ -45,6 +45,10 @@ body {
   box-sizing: border-box;
 }
 
+[disabled] {
+  pointer-events: none;
+}
+
 ul,
 li {
   margin: 0;
@@ -70,6 +74,28 @@ a {
 button {
   background: transparent;
   border: none;
+}
+
+.quick-skip-links {
+  position: fixed;
+  right: 0;
+  top: 0;
+  translate: 0 -105%;
+  display: flex;
+  z-index: 9999;
+  transition: translate .5s ease;
+
+  .skip-link {
+    padding: .7rem 1.3rem;
+    font-size: 1.3rem;
+    color: settings.$color-white;
+    background-color: settings.$color-primary;
+    border: .1rem solid settings.$color-white;
+  }
+
+  &:has(*:focus-visible) {
+    translate: 0 0;
+  }
 }
 
 .inner-wrap {

@@ -98,6 +98,10 @@
       }
     }
   }
+
+  &[disabled] {
+    opacity: .4;
+  }
 }
 
 span.a-button {

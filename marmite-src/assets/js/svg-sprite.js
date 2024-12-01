@@ -4,7 +4,10 @@
 
 /* eslint-disable no-undef */
 function importAll(r) {
-    r.keys().forEach(r);
+    r.keys().forEach((key) => {
+        console.log(`Importing: ${key}`); // Vérifier les fichiers importés
+        r(key);
+    });
 }
 
 importAll(require.context('../img/svg/', true, /\.svg$/));

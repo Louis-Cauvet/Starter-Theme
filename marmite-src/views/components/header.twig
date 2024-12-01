@@ -1,4 +1,4 @@
-<header class="inner-header" role="banner">
+<header id="header" class="inner-header" role="banner">
     <a href="#_" class="editor-img logo" title="Retour à la page d'accueil">
         <img src="../assets/img/logos/logo.png" alt="logo">
     </a>
@@ -84,10 +84,7 @@
 
 
 <search class="searchbar">
-    <button class="close-searchbar" tabindex="-1">
-        {{ macros.svg('close','25','as--text') }}
-        <span class="sr-only">Fermer le moteur de recherche interne</span>
-    </button>
+    {{ macros.btnButton('','as--icon-only close-searchbar', 'close', '20', 'Fermer le moteur de recherche interne', {'z-index': '-1'}) }}
     <form action="" method="POST" class="inline-form">
         <label for="search-terms" class="sr-only">Rechercher par mots clés</label>
         <input type="search" id="search-terms" placeholder="Mots clés" tabindex="-1">

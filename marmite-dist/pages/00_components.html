@@ -37,8 +37,20 @@
 
 <body id="body" class="">
 
+    <ul class="quick-skip-links">
+        <li class="skip-link">
+            <a href="#header">Aller au menu</a>
+        </li>
+        <li class="skip-link">
+            <a href="#content">Aller au contenu</a>
+        </li>
+        <li class="skip-link">
+            <a href="#">Aller au footer</a>
+        </li>
+    </ul>
+
     
-        <header class="inner-header" role="banner">
+        <header id="header" class="inner-header" role="banner">
     <a href="#_" class="editor-img logo" title="Retour à la page d'accueil">
         <img src="../assets/img/logos/logo.png" alt="logo">
     </a>
@@ -159,14 +171,18 @@
 
 
 <search class="searchbar">
-    <button class="close-searchbar" tabindex="-1">
-        
-    <svg class="a-icon as--25 as--text" aria-hidden="true" focusable="false">
+    
+    
+    <button class="a-button as--icon-only close-searchbar" z-index="-1">
+    
+    <svg class="a-icon as--20" aria-hidden="true" focusable="false">
         <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-close"></use>
     </svg>
 
-        <span class="sr-only">Fermer le moteur de recherche interne</span>
+    
+    <span class="sr-only">Fermer le moteur de recherche interne</span>
     </button>
+
     <form action="" method="POST" class="inline-form">
         <label for="search-terms" class="sr-only">Rechercher par mots clés</label>
         <input type="search" id="search-terms" placeholder="Mots clés" tabindex="-1">
@@ -175,7 +191,7 @@
 </search>
     
 
-    <main role="main" class="main-content">
+    <main id="content" role="main" class="main-content">
         
     <div class="hero-banner">
     <div class="editor-img as--bg-img as--overlay">
@@ -207,6 +223,7 @@
 
         <p>Texte à la base classique qui devient <i>italique</i> , <b>gras</b> , <s>souligné</s> , <sup>mis à la puissance</sup> , <sub> mis à l'exposant </sub>avant de terminer.</p>
 
+        <br>
         <br>
         <br>
 
@@ -244,6 +261,7 @@
 
         
 
+        <br>
         <br>
         <br>
 
@@ -378,7 +396,16 @@
     </button>
 
         <button class="a-button" data-text-hover="CIC">Cas d'études</button>
+        
+    
+    <button class="a-button" disabled="">
+    
+    Bouton Désactivé
+    
+    </button>
 
+
+        <br>
         <br>
         <br>
 
@@ -513,6 +540,7 @@
 
         <a href="#_" class="a-button" data-text-hover="CIC">Cas d'études</a>
 
+        <br>
         <br>
         <br>
 

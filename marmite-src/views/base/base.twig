@@ -37,11 +37,23 @@
 
 <body id="body" class="{{ pageClass }}">
 {% block body %}
+    <ul class="quick-skip-links">
+        <li class="skip-link">
+            <a href="#header">Aller au menu</a>
+        </li>
+        <li class="skip-link">
+            <a href="#content">Aller au contenu</a>
+        </li>
+        <li class="skip-link">
+            <a href="#">Aller au footer</a>
+        </li>
+    </ul>
+
     {% block header %}
         {% include "../components/header.twig" %}
     {% endblock %}
 
-    <main role="main" class="main-content">
+    <main id="content" role="main" class="main-content">
         {% block mainContent "" %}
     </main>
 

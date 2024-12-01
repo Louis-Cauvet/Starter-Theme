@@ -1,4 +1,3 @@
-- Déclinaison de boutons
 - Footer (avec cartes maps qui apparaissent depuis le bas)
 - Slider simple (1 slide à la fois)
 - Slider Triple

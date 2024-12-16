@@ -1,0 +1,72 @@
+/* ====================== */
+/* TOOLTIPS
+/* ====================== */
+@use "../settings/1ndex" as settings;
+
+.a-tip {
+  position: relative;
+  display: inline-block;
+
+  .tip-text {
+    position: absolute;
+    padding: .6rem 1.2rem;
+    color: settings.$color-white;
+    background-color: settings.$color-primary;
+    white-space: nowrap;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity .3s ease, translate .3s ease;
+
+    &.as--left {
+      right: calc(100% + 4rem);
+      top: 50%;
+      translate: 0 -50%;
+    }
+
+    &.as--bottom {
+      left: 50%;
+      top: calc(100% + 4rem);
+      translate: -50% 0;
+    }
+
+    &.as--top {
+      left: 50%;
+      bottom: calc(100% + 4rem);
+      translate: -50% 0;
+    }
+
+    &.as--right {
+      left: calc(100% + 4rem);
+      top: 50%;
+      translate: 0 -50%;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    span {
+      pointer-events: initial;
+    }
+
+    .tip-text {
+      opacity: 1;
+      z-index: 0;
+
+      &.as--left {
+        translate: 3rem -50%;
+      }
+
+      &.as--bottom {
+        translate: -50% -3rem;
+      }
+
+      &.as--top {
+        translate: -50% 3rem;
+      }
+
+      &.as--right {
+        translate: -3rem -50%;
+      }
+    }
+  }
+}

@@ -45,4 +45,25 @@
       opacity: .35;
     }
   }
+
+  &.as--parallax {
+    max-height: 50rem;
+
+    img {
+      min-height: 70rem;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+  &:has([width], [height]) {
+    img:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: settings.$color-grey url('../img/logos/logo.png') no-repeat 50% 50%;
+      background-size: 15% auto;
+    }
+  }
 }

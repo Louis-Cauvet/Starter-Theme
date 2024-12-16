@@ -79,21 +79,41 @@
   &[data-text-hover] {
     transition: padding-bottom .5s settings.$default-transition-function;
 
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0rem;
+      left: 50%;
+      translate: -50% 0;
+      width: 3rem;
+      height: .2rem;
+      background-color: settings.$color-white;
+      border-radius: .6rem;
+      opacity: 0;
+      transition: .5s settings.$default-transition-function;
+    }
+
     &:after {
       content: attr(data-text-hover);
       position: absolute;
+      top: 1rem;
       left: 50%;
-      bottom: -3rem;
       translate: -50% 0;
+      white-space: nowrap;
       opacity: 0;
       transition: .5s settings.$default-transition-function;
     }
 
     &:hover {
-      padding-bottom: 4rem;
+      padding-bottom: 5rem;
+
+      &:before {
+        top: 4rem;
+        opacity: 1;
+      }
 
       &:after {
-        bottom: 1rem;
+        top: 5rem;
         opacity: 1;
       }
     }

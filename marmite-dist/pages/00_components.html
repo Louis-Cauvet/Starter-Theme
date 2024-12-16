@@ -52,7 +52,7 @@
     
         <header id="header" class="inner-header" role="banner">
     <a href="#_" class="editor-img logo" title="Retour à la page d'accueil">
-        <img src="../assets/img/logos/logo.png" alt="logo">
+        <img src="../assets/img/logos/logo.png" alt="Logo peremttant de revenir à la page d'accueil">
     </a>
 
     <nav class="nav-menu" role="navigation">
@@ -173,7 +173,7 @@
 <search class="searchbar">
     
     
-    <button class="a-button as--icon-only close-searchbar" z-index="-1">
+    <button class="a-button as--icon-only close-searchbar" tabindex="-1">
     
     <svg class="a-icon as--20" aria-hidden="true" focusable="false">
         <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-close"></use>
@@ -195,9 +195,9 @@
         
     <div class="hero-banner">
     <div class="editor-img as--bg-img as--overlay">
-        <picture>
-            <img src="https://picsum.photos/1920/900" alt="Image banière de la page">
-        </picture>
+
+            <img src="https://picsum.photos/1920/900" alt="Image bannière de la page">
+
     </div>
     <h1 class="a-title-1 h-color-white">Titre principal de la page (niveau 1)</h1>
 </div>
@@ -217,11 +217,6 @@
         <p class="a-title-1 as--underline-hover">Texte de plusieurs lignes qui est soulignée progressivement
             lors du survol de la souris
         </p>
-
-        <br>
-        <br>
-
-        <p>Texte à la base classique qui devient <i>italique</i> , <b>gras</b> , <s>souligné</s> , <sup>mis à la puissance</sup> , <sub> mis à l'exposant </sub>avant de terminer.</p>
 
         <br>
         <br>
@@ -395,7 +390,7 @@
     
     </button>
 
-        <button class="a-button" data-text-hover="CIC">Cas d'études</button>
+        <button class="a-button" data-text-hover="Cas d'étude">Animation au survol</button>
         
     
     <button class="a-button" disabled="">
@@ -538,7 +533,7 @@
     
     </a>
 
-        <a href="#_" class="a-button" data-text-hover="CIC">Cas d'études</a>
+        <a href="#_" class="a-button" data-text-hover="Cas d'étude">Animation au survol</a>
 
         <br>
         <br>
@@ -661,7 +656,624 @@
     Texte et icône
     </span>
 
-        <span class="a-button" data-text-hover="CIC">Cas d'études</span>
+        <span class="a-button" data-text-hover="Cas d'étude">Animation au survol</span>
+
+        <br>
+        <br>
+        <br>
+
+        <h2 class="a-title-2 h-mb-10">Tooltips</h2>
+        <div class="h-ml-150">
+            <a href="#_" class="a-tip">
+                
+    
+    <span class="a-button as--icon-only">
+    
+    <svg class="a-icon as--20" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-close"></use>
+    </svg>
+
+    
+    </span>
+
+                <span class="tip-text as--left">Tooltip à gauche</span>
+            </a>
+
+            <a href="#_" class="a-tip">
+                
+    
+    <span class="a-button as--icon-only">
+    
+    <svg class="a-icon as--20" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-close"></use>
+    </svg>
+
+    
+    </span>
+
+                <span class="tip-text as--bottom">Tooltip en bas</span>
+            </a>
+
+            <a href="#_" class="a-tip">
+                
+    
+    <span class="a-button as--icon-only">
+    
+    <svg class="a-icon as--20" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-close"></use>
+    </svg>
+
+    
+    </span>
+
+                <span class="tip-text as--top">Tooltip en haut</span>
+            </a>
+
+            <a href="#_" class="a-tip">
+                
+    
+    <span class="a-button as--icon-only">
+    
+    <svg class="a-icon as--20" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-close"></use>
+    </svg>
+
+    
+    </span>
+
+                <span class="tip-text as--right">Tooltip à droite</span>
+            </a>
+        </div>
+
+
+        <div class="editor-wysiwyg">
+            <h2>Simulation d'un titre h2</h2>
+            <p>Paragraphe intro, lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+            <h3>Simulation d'un titre h3</h3>
+            <p>Paragraphe plus fourni, avec divers exemples de styles de textes comme <strong>du texte important</strong>
+                (à ne pas confondre avec un <b>texte en gras</b>) en premier, puis<i> du texte italique</i> et <s>du
+                texte barré</s>, ensuite il y a du <sup>texte à la puissance</sup> et <sub>du texte à l'exposant</sub>,
+                avant de finir avec <a href="#_">un lien</a> qui ne pointe vers nulle part vu que c'est une page d'intégration.
+            </p>
+
+            <ul>
+                <li><p>Ceci est une liste non ordonnée <a href="#_">(qui peut comporter un lien comme ceci)</a></p></li>
+                <li>
+                    <ul>
+                        <li>qui consiste</li>
+                        <li>en plusieurs points</li>
+                    </ul>
+                </li>
+                <li>et dont le <i>style de texte</i> peut <b>varier</b></li>
+            </ul>
+
+            <ol>
+                <li>Premier point de la liste ordonnée</li>
+                <li>Deuxième point de la liste ordonnée</li>
+                <li>Troisème point de la liste ordonnée</li>
+            </ol>
+
+            <p>Une abbréviation telle que <abbr title="World Wide Web">WWW</abbr> peut ainsi être expliquée.</p>
+
+            <dl>
+                <dt>Liste</dt>
+                <dd>Ensemble fini d'éléments énumérés avec ou sans ordre précis</dd>
+
+                <dt>de</dt>
+                <dd>Préposition après un verbe ou un nom</dd>
+
+                <dt>définitions</dt>
+                <dd>Formule qui donne le sens d'un mot</dd>
+            </dl>
+        </div>
+
+        
+        <div class="editor-wysiwyg">
+            <ul class="editor-col">
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+
+                                <img src="https://picsum.photos/1000/401" alt="Texte alternatif" width="1000" height="400">
+
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+
+                                <img src="https://picsum.photos/1000/402" alt="Texte alternatif" width="1000" height="400">
+
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+            </ul>
+        </div>
+
+        
+        <div class="editor-wysiwyg">
+            <ul class="editor-col">
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/600/301" alt="Texte alternatif" width="600" height="300">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/600/302" alt="Texte alternatif" width="600" height="300">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/600/303" alt="Texte alternatif" width="600" height="300">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+            </ul>
+        </div>
+
+        
+        <div class="editor-wysiwyg">
+            <ul class="editor-col">
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/251" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/252" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/253" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/254" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+            </ul>
+        </div>
+
+        
+        <div class="editor-wysiwyg">
+            <ul class="editor-col">
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/221" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/222" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/223" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/224" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+                    <li class="col">
+                        <div class="editor-img as--conserved-ratio">
+                            
+                            <img src="https://picsum.photos/400/225" alt="Texte alternatif" width="400" height="250">
+                            
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                            commodo sagittis leo. Cras quis risus massa.
+                        </p>
+                        
+    
+    <a href="#_" title="Bouton classique" class="a-button">
+    
+    Bouton classique
+    
+    </a>
+
+                    </li>
+                
+            </ul>
+        </div>
+
+        
+        <div class="editor-wysiwyg couple-content-img">
+            <div class="content-side">
+                <h2>Simulation de titre de niveau 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+                </p>
+                <ul>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    <a href="#_">eget suscipit massa erat id justo.</a>
+                </p>
+            </div>
+            <div class="editor-img as--conserved-ratio">
+
+                    <img src="https://picsum.photos/800/490" alt="Texte alternatif" width="800" height="490">
+
+            </div>
+        </div>
+
+        
+        <div class="editor-wysiwyg couple-content-img as--reverse">
+            <div class="content-side">
+                <h2>Simulation de titre de niveau 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+                </p>
+                <ul>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    <a href="#_">eget suscipit massa erat id justo.</a>
+                </p>
+            </div>
+            <div class="editor-img as--conserved-ratio">
+                
+                <img src="https://picsum.photos/800/490" alt="Texte alternatif" width="800" height="490">
+                
+            </div>
+        </div>
+
+        
+        <div class="editor-wysiwyg couple-content-img as--bigger-img">
+            <div class="content-side">
+                <h2>Simulation de titre de niveau 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+                </p>
+                <ul>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    <a href="#_">eget suscipit massa erat id justo.</a>
+                </p>
+            </div>
+            <div class="editor-img as--conserved-ratio">
+
+                <img src="https://picsum.photos/1200/600" alt="Texte alternatif" width="1200" height="600">
+
+            </div>
+        </div>
+
+        
+        <div class="editor-wysiwyg couple-content-img as--bigger-img as--reverse">
+            <div class="content-side">
+                <h2>Simulation de titre de niveau 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+                </p>
+                <ul>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                        <li>liste à puce</li>
+                    
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                    <a href="#_">eget suscipit massa erat id justo.</a>
+                </p>
+            </div>
+            <div class="editor-img as--conserved-ratio">
+                
+                <img src="https://picsum.photos/1200/600" alt="Texte alternatif" width="1200" height="600">
+                
+            </div>
+        </div>
+
+        <div class="editor-wysiwyg as--list-2columns">
+            <ul>
+                <li>Cette liste</li>
+                <li>possède</li>
+                <li>un pouvoir</li>
+                <li>magique</li>
+                <li>car elle peut se séparer en plusieurs colonnes avec des tailles équitablement réparties, ce qui
+                peut s'avérer très pratique bien que cela ne fonctionne que sur le plan vertical et non horizontal.
+                Cette prouesse technique est rendue facilement utilisable et accessible</li>
+                <li>grâce à</li>
+                <li>la propriété CSS "columns".</li>
+                <li>Par contre,</li>
+                <li>on indique que les éléments enfants de cette liste ne peuvent pas être coupés</li>
+                <li>grâce à une autre propriété CSS</li>
+                <li>qui est "break-inside: avoid".</li>
+            </ul>
+        </div>
+
+        
+        <div class="editor-wysiwyg testimonial">
+            <div class="editor-img testimonial-image as--conserved-ratio">
+                <picture>
+                    <img src="../assets/img/uploads/portrait.jpg" alt="Photo de Marie Plassard, la témoignante" width="300" height="450">
+                </picture>
+            </div>
+            <div class="testimonial-content">
+                <q>" L'album <cite>Moon Music</cite> de Coldplay nous transporte littéralement dans un autre univers,
+                combinant poésie, émotions brutes et productions sonores d'une richesse inouïe. Dès les premières
+                notes, la voix de Chris Martin atteint un équilibre parfait entre fragilité et puissance, pour toucher
+                directement notre âme. Les paroles qui évoquent une quête d'amour et d'émerveillement, se mélangent avec
+                une touche cosmique qui semble audacieuse. "</q>
+                <p class="testimonial-author">Marie Plassard</p>
+                <p class="testimonial-author">Pianiste professionelle</p>
+            </div>
+        </div>
+
+        
+        <div class="editor-wysiwyg">
+            <div class="editor-img as--parallax">
+                <picture>
+                    <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1680" height="700">
+                </picture>
+            </div>
+        </div>
 
 
 
@@ -862,6 +1474,11 @@
 
 
 
+
+
+
+        
+        
 </div>
 
     </main>

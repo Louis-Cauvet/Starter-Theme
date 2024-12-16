@@ -12,7 +12,10 @@ import $ from 'jquery';
 let $currentScreenWidth = 0;
 let $currentScreenHeight = 0;
 let $currentScrollPosition = 0;
+let $lastScrollTop = 0;
 
+const $limitMobileFormat = 896;
+const $deltaScrollTop = 200;
 
 /************************
  * GLOBAL FUNCTIONS
@@ -30,10 +33,12 @@ function getViewport() {
     };
 }
 
+// Adding a negative tabindex attribute on a element
 function addNegativeTabindex($element) {
     $element.attr('tabindex', '-1');
 }
 
+// Removing an element's 'tabindex' attribute
 function removeTabindex($element) {
     $element.removeAttr('tabindex');
 }
@@ -61,6 +66,7 @@ function resetNavIndicator() {
     }
 }
 
+// Changing the nav-indicator's target
 function changeNavIndicatorTarget($target) {
     const $itemPosition = $target.position();
     const $itemWidth = $target.outerWidth();
@@ -79,7 +85,7 @@ function changeNavIndicatorTarget($target) {
 
 // Opening/closing submenus in nav menu + moving navigation's indicator
 function manageMenuNavigationSystem() {
-    if ($currentScreenWidth > 896) {
+    if ($currentScreenWidth > $limitMobileFormat) {
         // Desktop & horizontal tablet formats
         $('.nav-item-name').on('mouseenter focus', function () {
             $('.nav-submenu').removeClass('is-open');
@@ -110,6 +116,22 @@ function manageMenuNavigationSystem() {
     }
 }
 
+// Managing the mobile header's visibility after scrolling/resizing
+function manageMobileHeaderVisibility() {
+    const $header = $('.inner-header');
+
+    if ($currentScreenWidth < $limitMobileFormat) {
+        if ($currentScrollPosition > $deltaScrollTop && $currentScrollPosition > $lastScrollTop && !$header.find('.nav-menu').hasClass('is-open')) {
+            $header.addClass('is-hidden');
+        } else {
+            $header.removeClass('is-hidden');
+        }
+    } else {
+        $header.removeClass('is-hidden');
+    }
+
+    $lastScrollTop = $currentScrollPosition;
+}
 
 /************************
  * PAGE COMPORTMENT
@@ -137,12 +159,27 @@ const app = {
         console.log('Hauteur actuelle de l\'écran : ' + $currentScreenHeight);
         resetNavIndicator();
         manageMenuNavigationSystem();
+        manageMobileHeaderVisibility();
     },
 
 
     // Applies changes during page's scrolling
     onScroll: function () {
-        console.log('Position actuelle par rapport au haut de la page: ' + $currentScrollPosition);
+        manageMobileHeaderVisibility();
+
+        $(".editor-img.as--parallax").each(function() {
+            const $viewportHeight = $(window).height();
+            const $containerImageTop = $(this).offset().top;
+            const $containerImageHeight = $(this).outerHeight();
+
+            if ($containerImageTop < $currentScrollPosition + $viewportHeight && $currentScrollPosition < $containerImageTop + $containerImageHeight) {
+                const distanceFromViewport = $currentScrollPosition - $containerImageTop;
+
+                $(this).find('img').css({
+                    transform: "translateY(" + (distanceFromViewport * 0.3) + "px)"
+                });
+            }
+        })
     },
 
 

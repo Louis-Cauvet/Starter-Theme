@@ -1,20 +1,17 @@
-- Footer (avec cartes maps qui apparaissent depuis le bas)
+- Image parallaxe
 - Slider simple (1 slide à la fois)
 - Slider Triple
-- Accordéon
-- Colonnes multiples de contenu
-- bloc image-texte
-- Masonry grids
-- Grille de logos
-- Bloc témoignage
-- Editeur Wysiwyg
-- Tableau
-- Image parallaxe
-- Liste de définitions
+- Slider large
 - Player video
-- Player podcast
+- Grille de logos
+- Accordéon
+- Tableau
 - Fenêtre modale
-- Formulaire
+- Player podcast
 - Listing de cartes (ex: actualités)
+- Masonry grids
 - Grille avec système de filtrage côté Front
+- Formulaire
+- Footer (avec cartes maps qui apparaissent depuis le bas)
+
 - Système d'apparition lorsque rentre dans l'écran

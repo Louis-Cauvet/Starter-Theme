@@ -174,7 +174,7 @@
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
 {#                            <picture>#}
-                                <img src="https://picsum.photos/1000/40{{ i }}" alt="Texte alternatif" width="1000" height="400">
+                                <img src="https://picsum.photos/1000/45{{ i }}" alt="Texte alternatif" width="1000" height="450" loading="lazy">
 {#                            </picture>#}
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
@@ -195,7 +195,7 @@
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
                             {#                            <picture>#}
-                            <img src="https://picsum.photos/600/30{{ i }}" alt="Texte alternatif" width="600" height="300">
+                            <img src="https://picsum.photos/700/42{{ i }}" alt="Texte alternatif" width="700" height="420" loading="lazy">
                             {#                            </picture>#}
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
@@ -216,13 +216,11 @@
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
                             {#                            <picture>#}
-                            <img src="https://picsum.photos/400/25{{ i }}" alt="Texte alternatif" width="400" height="250">
+                            <img src="https://picsum.photos/700/42{{ i }}" alt="Texte alternatif" width="700" height="420" loading="lazy">
                             {#                            </picture>#}
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
-                            commodo sagittis leo. Cras quis risus massa.
+                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla.
                         </p>
                         {{ macros.btnLink('Bouton classique','', '#_') }}
                     </li>
@@ -237,13 +235,11 @@
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
                             {#                            <picture>#}
-                            <img src="https://picsum.photos/400/22{{ i }}" alt="Texte alternatif" width="400" height="250">
+                            <img src="https://picsum.photos/700/42{{ i }}" alt="Texte alternatif" width="700" height="420" loading="lazy">
                             {#                            </picture>#}
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                            posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                            eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
-                            commodo sagittis leo. Cras quis risus massa.
+                            posuere euismod leo.
                         </p>
                         {{ macros.btnLink('Bouton classique','', '#_') }}
                     </li>
@@ -252,121 +248,115 @@
         </div>
 
         {# Couple text + image #}
-        <div class="editor-wysiwyg couple-content-img">
-            <div class="content-side">
-                <h2>Simulation de titre de niveau 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
-                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
-                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
-                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
-                </p>
-                <ul>
-                    {% for i in 1..4 %}
-                        <li>liste à puce</li>
-                    {% endfor %}
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    <a href="#_">eget suscipit massa erat id justo.</a>
-                </p>
-            </div>
+        <div class="editor-wysiwyg couple-img-content">
             <div class="editor-img as--conserved-ratio">
 {#                <picture>#}
-                    <img src="https://picsum.photos/800/490" alt="Texte alternatif" width="800" height="490">
+                <img src="https://picsum.photos/800/490" alt="Texte alternatif" width="800" height="490" loading="lazy">
 {#                </picture>#}
             </div>
+            <h2>Simulation de titre de niveau 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+            </p>
+            <ul>
+                {% for i in 1..4 %}
+                    <li>liste à puces</li>
+                {% endfor %}
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                <a href="#_">eget suscipit massa erat id justo.</a>
+            </p>
         </div>
 
         {# Inversed couple text + image #}
-        <div class="editor-wysiwyg couple-content-img as--reverse">
-            <div class="content-side">
-                <h2>Simulation de titre de niveau 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
-                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
-                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
-                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
-                </p>
-                <ul>
-                    {% for i in 1..4 %}
-                        <li>liste à puce</li>
-                    {% endfor %}
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    <a href="#_">eget suscipit massa erat id justo.</a>
-                </p>
-            </div>
+        <div class="editor-wysiwyg couple-img-content as--reverse">
             <div class="editor-img as--conserved-ratio">
-                {#                <picture>#}
-                <img src="https://picsum.photos/800/490" alt="Texte alternatif" width="800" height="490">
-                {#                </picture>#}
+{#                <picture>#}
+                    <img src="https://picsum.photos/801/490" alt="Texte alternatif" width="801" height="490" loading="lazy">
+{#                </picture>#}
             </div>
+            <h2>Simulation de titre de niveau 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+            </p>
+            <ul>
+                {% for i in 1..4 %}
+                    <li>liste à puces</li>
+                {% endfor %}
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                <a href="#_">eget suscipit massa erat id justo.</a>
+            </p>
         </div>
 
         {# Couple text + large image #}
-        <div class="editor-wysiwyg couple-content-img as--bigger-img">
-            <div class="content-side">
-                <h2>Simulation de titre de niveau 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
-                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
-                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
-                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
-                </p>
-                <ul>
-                    {% for i in 1..4 %}
-                        <li>liste à puce</li>
-                    {% endfor %}
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    <a href="#_">eget suscipit massa erat id justo.</a>
-                </p>
-            </div>
+        <div class="editor-wysiwyg couple-img-content as--larger-img">
             <div class="editor-img as--conserved-ratio">
-{#                <picture>#}
-                <img src="https://picsum.photos/1200/600" alt="Texte alternatif" width="1200" height="600">
-{#                </picture>#}
+                {#                <picture>#}
+                <img src="https://picsum.photos/900/530" alt="Texte alternatif" width="900" height="530" loading="lazy">
+                {#                </picture>#}
             </div>
+            <h2>Simulation de titre de niveau 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+            </p>
+            <ul>
+                {% for i in 1..4 %}
+                    <li>liste à puces</li>
+                {% endfor %}
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                <a href="#_">eget suscipit massa erat id justo.</a>
+            </p>
         </div>
 
         {# Inversed couple text + large image #}
-        <div class="editor-wysiwyg couple-content-img as--bigger-img as--reverse">
-            <div class="content-side">
-                <h2>Simulation de titre de niveau 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
-                    commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
-                    pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
-                    accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
-                </p>
-                <ul>
-                    {% for i in 1..4 %}
-                        <li>liste à puce</li>
-                    {% endfor %}
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
-                    posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
-                    <a href="#_">eget suscipit massa erat id justo.</a>
-                </p>
-            </div>
+        <div class="editor-wysiwyg couple-img-content as--reverse as--larger-img">
             <div class="editor-img as--conserved-ratio">
                 {#                <picture>#}
-                <img src="https://picsum.photos/1200/600" alt="Texte alternatif" width="1200" height="600">
+                <img src="https://picsum.photos/901/530" alt="Texte alternatif" width="901" height="530" loading="lazy">
                 {#                </picture>#}
             </div>
+            <h2>Simulation de titre de niveau 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                eget suscipit massa erat id justo. Suspendisse neque turpis, accumsan non tortor non,
+                commodo sagittis leo. Cras quis risus massa.Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed orci mauris, sagittis in ex vel, posuere euismod leo. Etiam sodales, libero sed porta
+                pulvinar, velit sem vehicula nulla, eget suscipit massa erat id justo. Suspendisse neque turpis,
+                accumsan non tortor non, commodo sagittis leo. Cras quis risus massa.
+            </p>
+            <ul>
+                {% for i in 1..4 %}
+                    <li>liste à puces</li>
+                {% endfor %}
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
+                posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
+                <a href="#_">eget suscipit massa erat id justo.</a>
+            </p>
         </div>
 
+
+        {# 2 columns' list #}
         <div class="editor-wysiwyg as--list-2columns">
             <ul>
                 <li>Cette liste</li>

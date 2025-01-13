@@ -167,7 +167,7 @@ const app = {
     onScroll: function () {
         manageMobileHeaderVisibility();
 
-        $(".editor-img.as--parallax").each(function() {
+        $('.editor-img.as--parallax').each(function() {
             const $viewportHeight = $(window).height();
             const $containerImageTop = $(this).offset().top;
             const $containerImageHeight = $(this).outerHeight();
@@ -176,7 +176,7 @@ const app = {
                 const distanceFromViewport = $currentScrollPosition - $containerImageTop;
 
                 $(this).find('img').css({
-                    transform: "translateY(" + (distanceFromViewport * 0.3) + "px)"
+                    transform: 'translateY(' + (distanceFromViewport * 0.3) + 'px)'
                 });
             }
         })

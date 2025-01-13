@@ -19,12 +19,12 @@
 }
 
 @mixin title-level-2 {
-  font-size: clamp(1.75rem, 1.4167rem + 1.4815vw, 2.25rem);   // From 36px in larger screens to 28px in smaller screens
+  font-size: clamp(2.2rem, 2.5rem + 1vw, 2.8rem);   // From 28px in larger screens to 22px in smaller screens
   font-weight: 500;
 }
 
 @mixin title-level-3 {
-  font-size: clamp(2.2rem, 1.125rem + 1.1111vw, 2.8rem);  // From 28px in larger screens to 22px in smaller screens
+  font-size: clamp(2rem, 2.1rem + 1vw, 2.4rem);   // From 24px in larger screens to 20px in smaller screens
   font-weight: 500;
 }
 

@@ -24,9 +24,10 @@
     top: 100%;
     left: 0;
     width: 100%;
-    height: 0;
+    height: 100svh;
     background-color: settings.$color-overlay;
     opacity: 0;
+    pointer-events: none;
     transition: opacity .5s settings.$default-transition-function;
   }
 
@@ -60,12 +61,7 @@
 
     &:before {
       opacity: .6;
-    }
-  }
-
-  &.has--overlay {
-    &:before {
-      height: 100svh;
+      pointer-events: initial;
     }
   }
 }

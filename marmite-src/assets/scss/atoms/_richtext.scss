@@ -7,6 +7,12 @@
 .editor-wysiwyg {
   margin: 7.5rem 0;
 
+  &:after {              // Allows the height and width of a floating element to be taken in consideration
+    content: "";
+    display: block;
+    clear: both;
+  }
+
   >*:first-child {
     margin-top: 0 !important;
   }
@@ -36,7 +42,7 @@
   iframe,
   blockquote,
   dl {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
   }
 
   a:not(.a-button) {
@@ -142,34 +148,48 @@
   }
 }
 
-.couple-content-img {
-  display: flex;
-  align-items: start;
-  gap: 2.5rem 5rem;
-
+.couple-img-content {
   @media only screen and (max-width: settings.$mq-4) {
+    display: flex;
     flex-direction: column;
   }
 
-  .content-side >*:first-child {
-    margin-top: 0 !important;
-  }
-
   .editor-img {
-    min-width: 33.33%;
-  }
+    margin-left: 2.5rem;
+    float: right;
+    width: 35%;
 
-  &.as--bigger-img {
-    .editor-img {
-      min-width: 56%;
+    @media only screen and (max-width: settings.$mq-4) {
+      margin-left: 0;
+      float: initial;
+      width: 100%;
     }
   }
 
-  &.as--reverse {
-    flex-direction: row-reverse;
+  ul:not([class]),
+  ol:not([class]) {
+    display: inline-block;
+  }
 
-    @media only screen and (max-width: settings.$mq-4) {
-      flex-direction: column-reverse;
+  &.as--reverse {
+    .editor-img {
+      float: left;
+      margin-left: 0;
+      margin-right: 2.5rem;
+
+      @media only screen and (max-width: settings.$mq-4) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.as--larger-img {
+    .editor-img {
+      width: 55%;
+
+      @media only screen and (max-width: settings.$mq-4) {
+        width: 100%;
+      }
     }
   }
 }

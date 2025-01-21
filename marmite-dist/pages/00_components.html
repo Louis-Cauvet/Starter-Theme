@@ -1227,9 +1227,7 @@
         
         <div class="editor-wysiwyg testimonial">
             <div class="editor-img testimonial-image as--conserved-ratio">
-                <picture>
-                    <img src="../assets/img/uploads/portrait.jpg" alt="Photo de Marie Plassard, la témoignante" width="300" height="450">
-                </picture>
+                <img src="../assets/img/uploads/portrait.jpg" alt="Photo de Marie Plassard, la témoignante" width="300" height="450">
             </div>
             <div class="testimonial-content">
                 <q>" L'album <cite>Moon Music</cite> de Coldplay nous transporte littéralement dans un autre univers,
@@ -1246,9 +1244,38 @@
         <div class="editor-wysiwyg">
             <div class="editor-img as--parallax">
                 <picture>
-                    <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1680" height="700">
+                    <source srcset="https://picsum.photos/1680/700" alt="Texte alternatif pour les grands écrans" width="1680" height="700" media="(min-width: 896px)" />
+                    <img src="https://picsum.photos/1000/500" alt="Texte alternatif pour les petits écrans" width="1000" height="500">
                 </picture>
             </div>
+        </div>
+
+        
+        <div class="editor-wysiwyg">
+            <div class="editor-img">
+                <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1000" height="700">
+            </div>
+        </div>
+
+        
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
         </div>
 
 

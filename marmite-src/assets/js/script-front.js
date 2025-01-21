@@ -3,7 +3,14 @@
 /************************
  * IMPORTS
  ***********************/
+// Jquery
 import $ from 'jquery';
+
+// Swiper (Sliders)
+import Swiper from 'swiper/bundle';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 
 /************************
@@ -240,6 +247,23 @@ const app = {
             setTimeout(function (){
                 $('.searchbar').removeClass('has--overlay');
             }, 500)
+        });
+
+
+        // Sliders
+        // Initialisation de Swiper
+        new Swiper('.swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            slidesPerView: 1, // Nombre de slides visibles
+            spaceBetween: 10, // Espacement entre les slides
         });
     }
 };

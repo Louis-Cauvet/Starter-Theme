@@ -49,10 +49,18 @@
   &.as--parallax {
     max-height: 50rem;
 
+    @media only screen and (max-width: settings.$mq-4) {
+      max-height: 30rem;
+    }
+
     img {
       min-height: 70rem;
       width: auto;
       max-width: 100%;
+
+      @media only screen and (max-width: settings.$mq-4) {
+        min-height: 50rem;
+      }
     }
   }
 

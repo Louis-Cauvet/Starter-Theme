@@ -14,6 +14,7 @@
     "Twig",
     "Sass",
     "Jquery",
+    "Swiper",
     "integration"
   ],
   "author": "Louis Cauvet",
@@ -43,6 +44,7 @@
     "postcss-loader": "^8.1.1",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.2",
+    "style-loader": "^4.0.0",
     "svg-sprite-loader": "^6.0.11",
     "terser-webpack-plugin": "^5.3.10",
     "twig-loader": "^0.5.5",
@@ -51,7 +53,8 @@
   },
   "dependencies": {
     "core-js": "^3.38.1",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "swiper": "^11.2.1"
   },
   "overrides": {
     "braces": "^3.0.3",

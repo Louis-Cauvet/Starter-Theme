@@ -250,20 +250,41 @@ const app = {
         });
 
 
-        // Sliders
-        // Initialisation de Swiper
-        new Swiper('.swiper', {
-            loop: true,
+        // Sliders (doc : https://swiperjs.com/swiper-api, examples : https://swiperjs.com/demos)
+        new Swiper('.swiper-slider-simple', {
+            slidesPerView: 1,                      // Defines the slide's number at screen
+            spaceBetween: 30,                      // Defines the slide's space beetween
+            effect: 'slide',                       // Transition's effect (can be 'slide', 'fade', 'cube', 'cards', 'flip', 'coverflow', 'cube' or 'creative')
+            speed: 500,                            // Defines the time passed during the slide's change
+            loop: false,                           // Disabled the loop for prevent infinity sliding
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                prevEl: '.swiper-button-prev',     // Allows to define the base element for slider's prev arrow
+                nextEl: '.swiper-button-next',     // Allows to define the base element for slider's newt arrow
             },
             pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
+                el: '.swiper-pagination',          // Allows to define the base element for slider's pagination
+                type: 'bullets',                  // Allows to define the pagination's dots type  (can be 'bullets', 'fraction', 'progressbar' or 'custom')
+                clickable: true,                   // Allows to click on pagination's dots
+                dynamicBullets : true,             // Allows to hide some bullet if  there are too many
+                renderBullet: function (index, className) {        // Allows to choose the pagination's dots base code
+                    return `
+                        <button class="${className}" aria-label="Aller à la slide ${index + 1}">${index + 1}</button>  
+                    `;
+                },
             },
-            slidesPerView: 1, // Nombre de slides visibles
-            spaceBetween: 10, // Espacement entre les slides
+            keyboard: {
+                enabled: true,                      // Activates the keyboard navigation when the slider is focused
+                onlyInViewport: false,              // Allows the keyboard navigation even if the slider isn't visible on screen
+            },
+            a11y: {
+                prevSlideMessage: 'Accéder à la slide précédente',     // Accessibility text for prev slide's button
+                nextSlideMessage: 'Accéder à la slide suivante',       // Accessibility text for next slide's button
+            },
+            breakpoints : {
+                896: {                           // Defines a responsive breakpoint at 896px
+                    autoHeight: true,            // Allows to adapt slider's height depending on current slide's height
+                }
+            }
         });
     }
 };

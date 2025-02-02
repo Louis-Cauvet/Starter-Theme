@@ -173,9 +173,7 @@
                 {% for i in 1..2 %}
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
-{#                            <picture>#}
-                                <img src="https://picsum.photos/1000/45{{ i }}" alt="Texte alternatif" width="1000" height="450" loading="lazy">
-{#                            </picture>#}
+                            <img src="https://picsum.photos/1000/45{{ i }}" alt="Texte alternatif" width="1000" height="450" loading="lazy">
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
                             posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
@@ -194,9 +192,7 @@
                 {% for i in 1..3 %}
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
-                            {#                            <picture>#}
                             <img src="https://picsum.photos/700/42{{ i }}" alt="Texte alternatif" width="700" height="420" loading="lazy">
-                            {#                            </picture>#}
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
                             posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla,
@@ -215,9 +211,7 @@
                 {% for i in 1..4 %}
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
-                            {#                            <picture>#}
                             <img src="https://picsum.photos/700/42{{ i }}" alt="Texte alternatif" width="700" height="420" loading="lazy">
-                            {#                            </picture>#}
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
                             posuere euismod leo. Etiam sodales, libero sed porta pulvinar, velit sem vehicula nulla.
@@ -234,9 +228,7 @@
                 {% for i in 1..5 %}
                     <li class="col">
                         <div class="editor-img as--conserved-ratio">
-                            {#                            <picture>#}
                             <img src="https://picsum.photos/700/42{{ i }}" alt="Texte alternatif" width="700" height="420" loading="lazy">
-                            {#                            </picture>#}
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
                             posuere euismod leo.
@@ -250,9 +242,7 @@
         {# Couple text + image #}
         <div class="editor-wysiwyg couple-img-content">
             <div class="editor-img as--conserved-ratio">
-{#                <picture>#}
                 <img src="https://picsum.photos/800/490" alt="Texte alternatif" width="800" height="490" loading="lazy">
-{#                </picture>#}
             </div>
             <h2>Simulation de titre de niveau 2</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
@@ -277,9 +267,7 @@
         {# Inversed couple text + image #}
         <div class="editor-wysiwyg couple-img-content as--reverse">
             <div class="editor-img as--conserved-ratio">
-{#                <picture>#}
-                    <img src="https://picsum.photos/801/490" alt="Texte alternatif" width="801" height="490" loading="lazy">
-{#                </picture>#}
+                <img src="https://picsum.photos/801/490" alt="Texte alternatif" width="801" height="490" loading="lazy">
             </div>
             <h2>Simulation de titre de niveau 2</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
@@ -304,9 +292,7 @@
         {# Couple text + large image #}
         <div class="editor-wysiwyg couple-img-content as--larger-img">
             <div class="editor-img as--conserved-ratio">
-                {#                <picture>#}
                 <img src="https://picsum.photos/900/530" alt="Texte alternatif" width="900" height="530" loading="lazy">
-                {#                </picture>#}
             </div>
             <h2>Simulation de titre de niveau 2</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
@@ -331,9 +317,7 @@
         {# Inversed couple text + large image #}
         <div class="editor-wysiwyg couple-img-content as--reverse as--larger-img">
             <div class="editor-img as--conserved-ratio">
-                {#                <picture>#}
                 <img src="https://picsum.photos/901/530" alt="Texte alternatif" width="901" height="530" loading="lazy">
-                {#                </picture>#}
             </div>
             <h2>Simulation de titre de niveau 2</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci mauris, sagittis in ex vel,
@@ -404,29 +388,24 @@
         {# Fullwidth image #}
         <div class="editor-wysiwyg">
             <div class="editor-img">
-                <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1000" height="700">
+                <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1680" height="700">
             </div>
         </div>
 
-        {# Images sliders (using Swiper.js) #}
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                ...
-            </div>
-            <!-- If we need pagination -->
+        {# Images sliders (using Swiper.js : https://swiperjs.com) #}
+        <div class="swiper-slider-simple swiper editor-wysiwyg">
+            <ul class="swiper-wrapper">
+                {% for i in 1..3 %}
+                <li class="swiper-slide editor-img">
+                    <img src="https://picsum.photos/1680/70{{ i }}" alt="Texte alternatif" width="1680" height="70{{ i }}">
+                </li>
+                {% endfor %}
+            </ul>
+
+            <button class="swiper-button-prev"></button>
+            <button class="swiper-button-next"></button>
+
             <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
         </div>
 
 

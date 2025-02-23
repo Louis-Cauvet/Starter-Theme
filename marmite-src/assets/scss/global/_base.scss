@@ -22,6 +22,7 @@
 html {
   font-size: .625em;            // .1rem = 1px, 1rem = 10px, 10rem = 100px....
   background-color: settings.$color-background;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
   line-height: normal;
   font-weight: 400;
   color: settings.$color-text;
-  max-width: 258rem;                       // Over '4K' size
+  max-width: 258rem;                         // Over '4K' size
   -webkit-font-smoothing: antialiased;       // Remove the effect of pixelated edges on font's characters
 }
 

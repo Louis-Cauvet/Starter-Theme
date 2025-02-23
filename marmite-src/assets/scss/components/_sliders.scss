@@ -1,0 +1,80 @@
+/* ====================== */
+/* SWIPER'S SLIDERS
+/* ====================== */
+@use "../settings/1ndex" as settings;
+
+.swiper {
+  .swiper-arrow {
+    width: fit-content;
+    translate: 0 -50%;
+
+    &:after {
+      content: none;
+    }
+
+    &.swiper-button-next {
+      rotate: 180deg;
+    }
+
+    &:hover {
+      .a-icon {
+        fill: settings.$color-primary;
+      }
+    }
+  }
+
+  .swiper-pagination:has(.swiper-dot) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    bottom: .5rem;
+
+    .swiper-dot {
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: settings.$color-primary;
+      border-radius: 50%;
+      opacity: .4;
+      transition: all .3s settings.$default-transition-function;
+
+      &:hover {
+        background-color: settings.$color-dark-primary;
+      }
+
+      &.swiper-pagination-bullet-active {
+        scale: 1.15;
+        background-color: settings.$color-secondary;
+        opacity: 1;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.swiper-horizontal:has(.swiper-dot) {
+    padding-bottom: 4rem;
+  }
+
+  &.swiper-slider-simple {
+    .swiper-arrow {
+      @media only screen and (max-width: settings.$mq-2) {
+        display: none;
+      }
+    }
+  }
+
+  &.swiper-slider-triple:has(.keynumber-card) {
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .swiper-button-prev {
+      left: -1.5rem;
+    }
+
+    .swiper-button-next {
+      right: -1.5rem;
+    }
+  }
+}

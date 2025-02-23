@@ -1,8 +1,10 @@
+{# Banner (with image switch for smaller screens) #}
 <div class="hero-banner">
     <div class="editor-img as--bg-img as--overlay">
-{#        <picture>#}
-            <img src="https://picsum.photos/1920/900" alt="Image bannière de la page" width="1920" height="900" loading="lazy">
-{#        </picture>#}
+        <picture>
+            <source srcset="https://picsum.photos/1920/900" alt="Image bannière pour les grands écrans" width="1680" height="700" media="(min-width: 896px)" />
+            <img src="https://picsum.photos/1000/500" alt="Image bannière pour les petits écrans" width="1000" height="500">
+        </picture>
     </div>
     <h1 class="a-title-1 h-color-white">Titre principal de la page (niveau 1)</h1>
 </div>

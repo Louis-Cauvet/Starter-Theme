@@ -193,11 +193,13 @@
 
     <main id="content" role="main" class="main-content">
         
-    <div class="hero-banner">
+    
+<div class="hero-banner">
     <div class="editor-img as--bg-img as--overlay">
-
-            <img src="https://picsum.photos/1920/900" alt="Image bannière de la page" width="1920" height="900" loading="lazy">
-
+        <picture>
+            <source srcset="https://picsum.photos/1920/900" alt="Image bannière pour les grands écrans" width="1680" height="700" media="(min-width: 896px)" />
+            <img src="https://picsum.photos/1000/500" alt="Image bannière pour les petits écrans" width="1000" height="500">
+        </picture>
     </div>
     <h1 class="a-title-1 h-color-white">Titre principal de la page (niveau 1)</h1>
 </div>
@@ -1206,6 +1208,13 @@
 
         
         <div class="editor-wysiwyg">
+            <div class="editor-img">
+                <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1680" height="700">
+            </div>
+        </div>
+
+        
+        <div class="editor-wysiwyg">
             <div class="editor-img as--parallax">
                 <picture>
                     <source srcset="https://picsum.photos/1680/700" alt="Texte alternatif pour les grands écrans" width="1680" height="700" media="(min-width: 896px)" />
@@ -1215,34 +1224,103 @@
         </div>
 
         
-        <div class="editor-wysiwyg">
-            <div class="editor-img">
-                <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1680" height="700">
-            </div>
-        </div>
-
-        
         <div class="swiper-slider-simple swiper editor-wysiwyg">
             <ul class="swiper-wrapper">
                 
-                <li class="swiper-slide editor-img">
+                <li class="swiper-slide editor-img as--overlay">
                     <img src="https://picsum.photos/1680/701" alt="Texte alternatif" width="1680" height="701">
                 </li>
                 
-                <li class="swiper-slide editor-img">
+                <li class="swiper-slide editor-img as--overlay">
                     <img src="https://picsum.photos/1680/702" alt="Texte alternatif" width="1680" height="702">
                 </li>
                 
-                <li class="swiper-slide editor-img">
+                <li class="swiper-slide editor-img as--overlay">
                     <img src="https://picsum.photos/1680/703" alt="Texte alternatif" width="1680" height="703">
                 </li>
                 
             </ul>
 
-            <button class="swiper-button-prev"></button>
-            <button class="swiper-button-next"></button>
+            <button class="swiper-button-prev swiper-arrow">
+                
+    <svg class="a-icon as--40 as--white" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-left"></use>
+    </svg>
+
+            </button>
+            <button class="swiper-button-next swiper-arrow">
+                
+    <svg class="a-icon as--40 as--white" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-left"></use>
+    </svg>
+
+            </button>
 
             <div class="swiper-pagination"></div>
+        </div>
+
+        
+        <div class="swiper-slider-simple-autoplay swiper editor-wysiwyg">
+            <ul class="swiper-wrapper">
+                
+                    <li class="swiper-slide editor-img as--overlay">
+                        <img src="https://picsum.photos/1680/701" alt="Texte alternatif" width="1680" height="701">
+                    </li>
+                
+                    <li class="swiper-slide editor-img as--overlay">
+                        <img src="https://picsum.photos/1680/702" alt="Texte alternatif" width="1680" height="702">
+                    </li>
+                
+                    <li class="swiper-slide editor-img as--overlay">
+                        <img src="https://picsum.photos/1680/703" alt="Texte alternatif" width="1680" height="703">
+                    </li>
+                
+            </ul>
+        </div>
+
+        
+        <div class="swiper-slider-triple swiper editor-wysiwyg">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <div class="keynumber-card">
+                        <p>
+                            <span class="keynumber-value">178082</span>
+                            tasses de cafés englouties par l'équipe
+                        </p>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="keynumber-card">
+                        <p>
+                            <span class="keynumber-value">2570</span>
+                            € de chiffre d'affaires mensuels
+                        </p>
+                    </div>
+                </li>
+                <li class="swiper-slide">
+                    <div class="keynumber-card">
+                        <p>
+                            <span class="keynumber-value">100%</span>
+                            de clients satisfaits
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <button class="swiper-button-prev swiper-arrow">
+                
+    <svg class="a-icon as--40 as--dark-primary" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-left"></use>
+    </svg>
+
+            </button>
+            <button class="swiper-button-next swiper-arrow">
+                
+    <svg class="a-icon as--40 as--dark-primary" aria-hidden="true" focusable="false">
+        <use xlink:href="../assets/img/svg/icon-sprite.svg#icon-arrow-left"></use>
+    </svg>
+
+            </button>
         </div>
 
 

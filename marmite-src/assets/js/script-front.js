@@ -8,9 +8,7 @@ import $ from 'jquery';
 
 // Swiper (Sliders)
 import Swiper from 'swiper/bundle';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css/bundle';
 
 
 /************************
@@ -215,8 +213,91 @@ const app = {
             self.onScroll();
         });
 
-        const $focusablesElements = $('a, button, input, textarea, select, details')
+        // Sliders (doc : https://swiperjs.com/swiper-api, examples : https://swiperjs.com/demos)
+        new Swiper('.swiper-slider-simple', {
+            slidesPerView: 1,                      // Defines the slide's number at screen
+            spaceBetween: 30,                      // Defines the slide's space beetween
+            autoHeight: true,            // Allows to adapt slider's height depending on current slide's height
+            effect: 'slide',                       // Transition's effect (can be 'slide', 'fade', 'cube', 'cards', 'flip', 'coverflow', 'cube' or 'creative')
+            speed: 500,                            // Defines the time passed during the slide's change
+            loop: false,                           // Disabled the loop for prevent infinity sliding
+            navigation: {
+                prevEl: '.swiper-button-prev',     // Allows to define the base element for slider's prev arrow
+                nextEl: '.swiper-button-next',     // Allows to define the base element for slider's newt arrow
+            },
+            pagination: {
+                el: '.swiper-pagination',          // Allows to define the base element for slider's pagination
+                type: 'bullets',                   // Allows to define the pagination's dots type  (can be 'bullets', 'fraction', 'progressbar' or 'custom')
+                clickable: true,                   // Allows to click on pagination's dots
+                renderBullet: function (index, className) {        // Allows to choose the pagination's dots base code
+                    return `
+                        <button class="swiper-dot ${className}" aria-label="Aller à la slide ${index + 1}"></button>  
+                    `;
+                },
+            },
+            keyboard: {
+                enabled: true,                      // Activates the keyboard navigation when the slider is focused
+                onlyInViewport: false,              // Allows the keyboard navigation even if the slider isn't visible on screen
+            },
+            a11y: {
+                prevSlideMessage: 'Accéder à la slide précédente',     // Accessibility text for prev slide's button
+                nextSlideMessage: 'Accéder à la slide suivante',       // Accessibility text for next slide's button
+            },
+        });
 
+
+        new Swiper('.swiper-slider-simple-autoplay', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            autoHeight: true,
+            effect: 'fade',                       // Using "fade" effect
+            speed: 500,
+            loop: true,                           // Activated the loop for infinity sliding
+            autoplay: {                           // Defined autoplay on true
+                delay: 2000,                      // Defined the delay before slide switching with autoplay
+                pauseOnMouseEnter: true,          // Indicates than the autoplay is paused when the user interacts with the slider
+                disableOnInteraction: false,      // Indicates than the autoplay is not disabled after the user interacts with the slider
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
+            },
+            // breakpoints : {
+            //     896: {                           // Defines a responsive breakpoint at 896px
+            //
+            //     }
+            // }
+        });
+
+        new Swiper('.swiper-slider-triple', {
+            slidesPerView: 1,                  // Display 3 slides at the same time by default
+            slidesPerGroup: 1,
+            spaceBetween: 30,
+            autoHeight: true,
+            effect: 'slide',
+            speed: 500,
+            navigation: {
+                prevEl: '.swiper-button-prev',
+                nextEl: '.swiper-button-next',
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: false,
+            },
+            breakpoints : {
+                896: {                           // Defines a responsive breakpoint at 896px
+                    slidesPerView: 3,
+                    slidesPerGroup: 3,
+                },
+                512: {                           // Defines a responsive breakpoint at 512px
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                }
+            }
+        });
+
+
+        const $focusableElements = $('a, button, input, textarea, select, details');
 
         // Open/close mobile menu
         $('.open-mobile-menu').on('click', function () {
@@ -237,54 +318,16 @@ const app = {
         $('.open-searchbar').on('click', function () {
             $('.searchbar').addClass('is-open has--overlay');
             $('.searchbar:before').css('height', '100svh');
-            addNegativeTabindex($focusablesElements.not('.searchbar *'));
+            addNegativeTabindex($focusableElements.not('.searchbar *'));
             removeTabindex($('.searchbar *'));
         });
         $('.close-searchbar').on('click', function () {
             $('.searchbar').removeClass('is-open');
             addNegativeTabindex($('.searchbar *'));
-            removeTabindex($focusablesElements.not('.searchbar *'));
+            removeTabindex($focusableElements.not('.searchbar *'));
             setTimeout(function (){
                 $('.searchbar').removeClass('has--overlay');
             }, 500)
-        });
-
-
-        // Sliders (doc : https://swiperjs.com/swiper-api, examples : https://swiperjs.com/demos)
-        new Swiper('.swiper-slider-simple', {
-            slidesPerView: 1,                      // Defines the slide's number at screen
-            spaceBetween: 30,                      // Defines the slide's space beetween
-            effect: 'slide',                       // Transition's effect (can be 'slide', 'fade', 'cube', 'cards', 'flip', 'coverflow', 'cube' or 'creative')
-            speed: 500,                            // Defines the time passed during the slide's change
-            loop: false,                           // Disabled the loop for prevent infinity sliding
-            navigation: {
-                prevEl: '.swiper-button-prev',     // Allows to define the base element for slider's prev arrow
-                nextEl: '.swiper-button-next',     // Allows to define the base element for slider's newt arrow
-            },
-            pagination: {
-                el: '.swiper-pagination',          // Allows to define the base element for slider's pagination
-                type: 'bullets',                  // Allows to define the pagination's dots type  (can be 'bullets', 'fraction', 'progressbar' or 'custom')
-                clickable: true,                   // Allows to click on pagination's dots
-                dynamicBullets : true,             // Allows to hide some bullet if  there are too many
-                renderBullet: function (index, className) {        // Allows to choose the pagination's dots base code
-                    return `
-                        <button class="${className}" aria-label="Aller à la slide ${index + 1}">${index + 1}</button>  
-                    `;
-                },
-            },
-            keyboard: {
-                enabled: true,                      // Activates the keyboard navigation when the slider is focused
-                onlyInViewport: false,              // Allows the keyboard navigation even if the slider isn't visible on screen
-            },
-            a11y: {
-                prevSlideMessage: 'Accéder à la slide précédente',     // Accessibility text for prev slide's button
-                nextSlideMessage: 'Accéder à la slide suivante',       // Accessibility text for next slide's button
-            },
-            breakpoints : {
-                896: {                           // Defines a responsive breakpoint at 896px
-                    autoHeight: true,            // Allows to adapt slider's height depending on current slide's height
-                }
-            }
         });
     }
 };

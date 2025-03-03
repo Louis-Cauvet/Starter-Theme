@@ -16,7 +16,7 @@
   padding: 4rem 3rem;
   width: 100%;
   background-color: settings.$color-white;
-  transition: translate .5s settings.$default-transition-function;
+  transition: translate .3s settings.$default-transition-function;
 
   &:before {
     content: '';
@@ -28,7 +28,7 @@
     background-color: settings.$color-overlay;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .5s settings.$default-transition-function;
+    transition: opacity .3s settings.$default-transition-function;
   }
 
   .inline-form {

@@ -213,6 +213,49 @@ const app = {
             self.onScroll();
         });
 
+        const $focusableElements = $('a, button, input, textarea, select, details');
+
+        // Open/close mobile menu
+        $('.open-mobile-menu').on('click', function () {
+            $('.nav-menu').addClass('is-open');
+            removeTabindex($('.nav-menu>ul>li>a, .nav-menu>ul>li>button'));
+            $(this).addClass('is-hidden');
+            $('.close-mobile-menu').removeClass('is-hidden');
+        });
+        $('.close-mobile-menu').on('click', function () {
+            $('.nav-menu').removeClass('is-open');
+            addNegativeTabindex($('.nav-menu>ul>li>a, .nav-menu>ul>li>button'));
+            $(this).addClass('is-hidden');
+            $('.open-mobile-menu').removeClass('is-hidden');
+        });
+
+
+        // Open/close searchbar
+        $('.open-searchbar').on('click', function () {
+            $('.searchbar').addClass('is-open has--overlay');
+            $('.searchbar:before').css('height', '100svh');
+            addNegativeTabindex($focusableElements.not('.searchbar *'));
+            removeTabindex($('.searchbar *'));
+        });
+        $('.close-searchbar').on('click', function () {
+            $('.searchbar').removeClass('is-open');
+            addNegativeTabindex($('.searchbar *'));
+            removeTabindex($focusableElements.not('.searchbar *'));
+            setTimeout(function (){
+                $('.searchbar').removeClass('has--overlay');
+            }, 500)
+        });
+
+        // Accordions
+        $('.accordion-title').on('click', function() {
+            const $accordionContainer = $(this).closest('.accordion');
+            const $currentDetails = $(this).parent('details');
+
+            $accordionContainer.find('details').not($currentDetails).removeAttr('open');
+        });
+
+
+
         // Sliders (doc : https://swiperjs.com/swiper-api, examples : https://swiperjs.com/demos)
         new Swiper('.swiper-slider-simple', {
             slidesPerView: 1,                      // Defines the slide's number at screen
@@ -262,14 +305,9 @@ const app = {
                 enabled: true,
                 onlyInViewport: false,
             },
-            // breakpoints : {
-            //     896: {                           // Defines a responsive breakpoint at 896px
-            //
-            //     }
-            // }
         });
 
-        new Swiper('.swiper-slider-triple', {
+        new Swiper('.swiper-slider-five', {
             slidesPerView: 1,                  // Display 3 slides at the same time by default
             slidesPerGroup: 1,
             spaceBetween: 30,
@@ -285,49 +323,19 @@ const app = {
                 onlyInViewport: false,
             },
             breakpoints : {
-                896: {                           // Defines a responsive breakpoint at 896px
+                1408: {                           // Defines a responsive breakpoint at 1408px (for screens above)
+                    slidesPerView: 5,
+                    slidesPerGroup: 5,
+                },
+                896: {                           // Defines a responsive breakpoint at 896px (for screens above)
                     slidesPerView: 3,
                     slidesPerGroup: 3,
                 },
-                512: {                           // Defines a responsive breakpoint at 512px
+                512: {                           // Defines a responsive breakpoint at 512px (for screens above)
                     slidesPerView: 2,
                     slidesPerGroup: 2,
                 }
             }
-        });
-
-
-        const $focusableElements = $('a, button, input, textarea, select, details');
-
-        // Open/close mobile menu
-        $('.open-mobile-menu').on('click', function () {
-            $('.nav-menu').addClass('is-open');
-            removeTabindex($('.nav-menu>ul>li>a, .nav-menu>ul>li>button'));
-            $(this).addClass('is-hidden');
-            $('.close-mobile-menu').removeClass('is-hidden');
-        });
-        $('.close-mobile-menu').on('click', function () {
-            $('.nav-menu').removeClass('is-open');
-            addNegativeTabindex($('.nav-menu>ul>li>a, .nav-menu>ul>li>button'));
-            $(this).addClass('is-hidden');
-            $('.open-mobile-menu').removeClass('is-hidden');
-        });
-
-
-        // Open/close searchbar
-        $('.open-searchbar').on('click', function () {
-            $('.searchbar').addClass('is-open has--overlay');
-            $('.searchbar:before').css('height', '100svh');
-            addNegativeTabindex($focusableElements.not('.searchbar *'));
-            removeTabindex($('.searchbar *'));
-        });
-        $('.close-searchbar').on('click', function () {
-            $('.searchbar').removeClass('is-open');
-            addNegativeTabindex($('.searchbar *'));
-            removeTabindex($focusableElements.not('.searchbar *'));
-            setTimeout(function (){
-                $('.searchbar').removeClass('has--overlay');
-            }, 500)
         });
     }
 };

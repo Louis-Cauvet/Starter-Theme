@@ -23,12 +23,16 @@
     }
   }
 
+  &.swiper-horizontal:has(.swiper-dot) {
+    padding-bottom: 4.5rem;
+  }
+
   .swiper-pagination:has(.swiper-dot) {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.2rem;
-    bottom: .5rem;
+    bottom: 1rem;
 
     .swiper-dot {
       width: 1.8rem;
@@ -51,10 +55,6 @@
     }
   }
 
-  &.swiper-horizontal:has(.swiper-dot) {
-    padding-bottom: 4rem;
-  }
-
   &.swiper-slider-simple {
     .swiper-arrow {
       @media only screen and (max-width: settings.$mq-2) {
@@ -63,18 +63,18 @@
     }
   }
 
-  &.swiper-slider-triple:has(.keynumber-card) {
+  &.swiper-slider-five:has(.keynumber-card) {
     .swiper-slide {
       display: flex;
       justify-content: center;
     }
 
     .swiper-button-prev {
-      left: -1.5rem;
+      left: -.5rem;
     }
 
     .swiper-button-next {
-      right: -1.5rem;
+      right: -.5rem;
     }
   }
 }

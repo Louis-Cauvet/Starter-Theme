@@ -1,0 +1,112 @@
+/* ====================== */
+/* ACCORDIONS
+/* ====================== */
+@use "../settings/1ndex" as settings;
+
+.accordion {
+  margin: 0 auto;
+  max-width: 120rem;
+  interpolate-size: allow-keywords;
+
+  .accordion-item {
+    border-bottom: .2rem solid settings.$color-border;
+    overflow: hidden;
+
+    &:first-child {
+      .accordion-title {
+        border-top: .2rem solid settings.$color-border;
+      }
+    }
+
+    .accordion-title {
+      position: relative;
+      padding: 3.2rem 9.5rem 3.2rem 1.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      outline-offset: -.5rem;
+      cursor: pointer;
+      transition: background-color .3s settings.$default-transition-function;
+
+      .state-indicator {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        translate: 0 -50%;
+        width: 4.5rem;
+        height: 4.5rem;
+        border: .3rem solid settings.$color-secondary;
+        border-radius: 50%;
+        transition: .3s settings.$default-transition-function;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          top: .8rem;
+          translate: -50% 0;
+          width: .3rem;
+          height: calc(100% - 1.6rem);
+          background-color: settings.$color-secondary;
+          border-radius: 2rem;
+          transition: .3s settings.$default-transition-function;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: .8rem;
+          top: 50%;
+          translate: 0 -50%;
+          height: .3rem;
+          width: calc(100% - 1.6rem);
+          background-color: settings.$color-secondary;
+          border-radius: 2rem;
+          transition: .3s settings.$default-transition-function;
+        }
+      }
+
+      &:hover {
+        background-color: settings.$color-light-background;
+
+        .state-indicator {
+          rotate: 90deg;
+        }
+      }
+    }
+
+    .accordion-content {
+      padding: 2.3rem 2rem 2.8rem;
+    }
+
+    &::details-content {
+      block-size: 0;
+      transition: block-size .2s settings.$default-transition-function, content-visibility .2s settings.$default-transition-function;
+      transition-behavior: allow-discrete;
+    }
+
+    &[open] {
+      .accordion-title {
+        background-color: settings.$color-light-background;
+
+        .state-indicator {
+          rotate: 90deg;
+          border-color: settings.$color-dark-secondary;
+
+          &:before,
+          &:after {
+            background-color: settings.$color-dark-secondary;
+          }
+
+          &:after {
+            opacity: 0;
+          }
+        }
+      }
+
+      &::details-content {
+        block-size: auto;
+      }
+    }
+  }
+}

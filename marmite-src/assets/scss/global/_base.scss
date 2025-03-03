@@ -95,6 +95,10 @@ cite {
   font-style: italic;
 }
 
+details summary {
+  display: block;
+}
+
 .quick-skip-links {
   position: fixed;
   right: 0;
@@ -121,6 +125,11 @@ cite {
   margin: 0 auto;
   padding: 0 2rem;
   max-width: 172rem;
+
+  *.as--exceed-inner-wrap {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
 }
 
 .sr-only {           // Maximum level of hide for an element, in goal to make it reacheable only by screen readers

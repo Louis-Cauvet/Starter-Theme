@@ -27,7 +27,7 @@
     </button>
 {% endmacro %}
 
-{# Buttons .a-button #}
+{# Spans .a-button #}
 {% macro btnSpan(content, class, iconName, iconSize, attributes) %}
     {% from _self import svg %}
     <span class="a-button{% if class %} {{ class }}{% endif %}{% if iconPosition %} as--{{ iconPosition }}{% endif %}"{% for attr, value in attributes %} {{ attr }}="{{ value }}"{% endfor %}>

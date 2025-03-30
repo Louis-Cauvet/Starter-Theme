@@ -1,0 +1,16 @@
+{# Fullwidth image #}
+<section class="editor-wysiwyg">
+    <div class="editor-img">
+        <img src="https://picsum.photos/1680/700" alt="Texte alternatif" width="1680" height="700">
+    </div>
+</section>
+
+{# Fullwidth image with paralax #}
+<section class="editor-wysiwyg">
+    <div class="editor-img as--parallax">
+        <picture>
+            <source srcset="https://picsum.photos/1680/700" alt="Texte alternatif pour les grands écrans" width="1680" height="700" media="(min-width: 896px)" />
+            <img src="https://picsum.photos/1000/500" alt="Texte alternatif pour les petits écrans" width="1000" height="500">
+        </picture>
+    </div>
+</section>

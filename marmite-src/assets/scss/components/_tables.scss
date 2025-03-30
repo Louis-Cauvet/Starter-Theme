@@ -1,0 +1,58 @@
+/* ====================== */
+/* TABLES
+/* ====================== */
+@use "../settings/1ndex" as settings;
+
+table {
+  position: relative;
+  width: 100%;
+
+  caption {
+    caption-side: bottom;
+    padding-top: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  thead,
+  tfoot {
+    font-weight: 600;
+    color: settings.$color-white;
+    background-color: settings.$color-light-secondary;
+
+    th,
+    td {
+      text-align: center;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: settings.$color-light-background;
+      }
+
+      &:nth-child(even) {
+        background-color: settings.$color-white;
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: 1rem 1.5rem;
+    min-width: 20rem;
+    border: .2rem solid settings.$color-border;
+  }
+
+  th {
+    padding-left: 3rem;
+    font-weight: 600;
+    text-align: start;
+  }
+}
+
+.table-container {
+  overflow-x: auto;
+}

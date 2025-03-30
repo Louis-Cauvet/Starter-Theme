@@ -114,6 +114,7 @@
   &.as--list-2columns {
     ul {
       columns: 2;
+      gap: 3rem;
 
       @media only screen and (max-width: settings.$mq-2) {
         columns: 1;
